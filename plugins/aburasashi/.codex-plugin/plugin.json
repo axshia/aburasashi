@@ -1,0 +1,35 @@
+{
+  "name": "aburasashi",
+  "version": "0.1.0",
+  "description": "Reusable agent skills for reducing friction and bottlenecks in everyday software development.",
+  "author": {
+    "name": "axshia",
+    "url": "https://github.com/axshia"
+  },
+  "homepage": "https://github.com/axshia/aburasashi",
+  "repository": "https://github.com/axshia/aburasashi",
+  "license": "MIT",
+  "keywords": [
+    "developer-productivity",
+    "workflow",
+    "automation",
+    "bottleneck"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Aburasashi",
+    "shortDescription": "Reduce friction in everyday development.",
+    "longDescription": "A curated collection of reusable agent skills for streamlining software development and exposing bottlenecks.",
+    "developerName": "axshia",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive"
+    ],
+    "websiteURL": "https://github.com/axshia/aburasashi",
+    "defaultPrompt": [
+      "Audit this development workflow and identify its biggest bottleneck.",
+      "Suggest the smallest change that would remove friction from this task.",
+      "Review this repository for recurring sources of developer toil."
+    ]
+  }
+}

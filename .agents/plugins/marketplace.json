@@ -1,0 +1,20 @@
+{
+  "name": "aburasashi",
+  "interface": {
+    "displayName": "Aburasashi"
+  },
+  "plugins": [
+    {
+      "name": "aburasashi",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aburasashi"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

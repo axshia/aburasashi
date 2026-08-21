@@ -1,0 +1,22 @@
+{
+  "name": "aburasashi",
+  "owner": {
+    "name": "axshia"
+  },
+  "metadata": {
+    "description": "Agent skills for removing friction from everyday software development."
+  },
+  "plugins": [
+    {
+      "name": "aburasashi",
+      "source": "./plugins/aburasashi",
+      "description": "Reusable agent skills for reducing friction and bottlenecks in everyday software development.",
+      "category": "development",
+      "tags": [
+        "productivity",
+        "workflow",
+        "automation"
+      ]
+    }
+  ]
+}

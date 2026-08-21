@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "aburasashi",
+  "version": "0.1.0",
+  "description": "Reusable agent skills for reducing friction and bottlenecks in everyday software development.",
+  "author": {
+    "name": "axshia",
+    "url": "https://github.com/axshia"
+  },
+  "homepage": "https://github.com/axshia/aburasashi",
+  "repository": "https://github.com/axshia/aburasashi",
+  "license": "MIT",
+  "keywords": [
+    "developer-productivity",
+    "workflow",
+    "automation",
+    "bottleneck"
+  ],
+  "skills": "./skills/"
+}
