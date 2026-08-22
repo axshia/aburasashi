@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "endpoints": [
+    {
+      "key": "DELETE /widgets/{widgetId}",
+      "method": "DELETE",
+      "path": "/widgets/{widgetId}",
+      "title": "Delete a widget",
+      "changeType": "removed",
+      "fileStem": "delete-widget",
+      "properties": [],
+      "before": {
+        "operationId": "deleteWidget",
+        "expand": [],
+        "annotations": [],
+        "responseStatuses": [],
+        "expandAllProperties": false,
+        "rootLabel": "REMOVED",
+        "missingRemoved": [],
+        "image": "delete-widget-before.png"
+      },
+      "after": null
+    },
+    {
+      "key": "GET /widgets/{widgetId}",
+      "method": "GET",
+      "path": "/widgets/{widgetId}",
+      "title": "Get a widget",
+      "changeType": "modified",
+      "fileStem": "get-widget",
+      "properties": [
+        {
+          "kind": "removed",
+          "path": "response.200.application/json.legacyCode",
+          "name": "legacyCode"
+        },
+        {
+          "kind": "changed",
+          "path": "response.200.application/json.status",
+          "name": "status"
+        }
+      ],
+      "before": {
+        "operationId": "getWidget",
+        "expand": [],
+        "annotations": [
+          {
+            "name": "legacyCode",
+            "label": "REMOVED"
+          },
+          {
+            "name": "status",
+            "label": "CHANGE"
+          }
+        ],
+        "responseStatuses": [
+          "200"
+        ],
+        "expandAllProperties": false,
+        "rootLabel": null,
+        "missingRemoved": [],
+        "image": "get-widget-before.png"
+      },
+      "after": {
+        "operationId": "getWidget",
+        "expand": [],
+        "annotations": [
+          {
+            "name": "status",
+            "label": "CHANGE"
+          }
+        ],
+        "responseStatuses": [
+          "200"
+        ],
+        "expandAllProperties": false,
+        "rootLabel": null,
+        "missingRemoved": [
+          "legacyCode"
+        ],
+        "image": "get-widget-after.png"
+      }
+    },
+    {
+      "key": "POST /widgets",
+      "method": "POST",
+      "path": "/widgets",
+      "title": "Create a widget",
+      "changeType": "added",
+      "fileStem": "create-widget",
+      "properties": [],
+      "before": null,
+      "after": {
+        "operationId": "createWidget",
+        "expand": [
+          "configuration",
+          "metadata"
+        ],
+        "annotations": [],
+        "responseStatuses": [],
+        "expandAllProperties": true,
+        "rootLabel": null,
+        "missingRemoved": [],
+        "image": "create-widget-after.png"
+      }
+    }
+  ]
+}

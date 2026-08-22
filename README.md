@@ -1,11 +1,26 @@
 # aburasashi
 
-日々のソフトウェア開発にある摩擦を減らし、ボトルネックを見つけて解消するための Agent Skills コレクションです。
+A collection of Agent Skills for reducing friction, exposing bottlenecks, and
+making everyday software development more efficient.
 
-同じスキル本体を Claude Code と Codex の両方へ配布できる構成を採用しています。スキルは `plugins/aburasashi/skills/` だけで管理し、各プラットフォーム固有の manifest は配布メタデータだけを担当します。
+The repository publishes the same skill implementations to both Claude Code and
+Codex. Skills live only in `plugins/aburasashi/skills/`; platform-specific
+manifests contain distribution metadata rather than duplicated instructions.
 
-> [!NOTE]
-> 現在はプロジェクトの初期セットアップ段階で、配布対象のスキルはまだありません。通常の構造検証は通りますが、`make validate-release` は最初の実スキルが追加されるまで意図的に失敗します。
+## Skills
+
+- [OpenAPI ReDoc PR Screenshots](plugins/aburasashi/skills/openapi-redoc-pr-screenshots/README.md)
+  detects changed OpenAPI endpoints, creates annotated headless ReDoc captures,
+  and prepares per-endpoint Before/After tables for GitHub pull requests.
+
+### Example: modified endpoint
+
+| Before | After |
+| --- | --- |
+| ![Before ReDoc with CHANGE and REMOVED annotations](plugins/aburasashi/skills/openapi-redoc-pr-screenshots/assets/example/captures/get-widget-before.png) | ![After ReDoc with CHANGE and REMOVED annotations](plugins/aburasashi/skills/openapi-redoc-pr-screenshots/assets/example/captures/get-widget-after.png) |
+
+See the [skill README](plugins/aburasashi/skills/openapi-redoc-pr-screenshots/README.md)
+for added and removed endpoint examples, installation behavior, and usage.
 
 ## Repository layout
 
@@ -23,27 +38,29 @@
 
 ## Development
 
-必要なのは Python 3.10 以降と `make` だけです。
+Development requires Python 3.10 or later and `make`.
 
 ```bash
 make validate
 ```
 
-Claude Code CLI がインストール済みなら、公式 validator も実行できます。
+If the Claude Code CLI is installed, run its official validator as well:
 
 ```bash
 make validate-claude
 ```
 
-スキルの追加ルールは [CONTRIBUTING.md](CONTRIBUTING.md)、ローカル導入と公開手順は [docs/publishing.md](docs/publishing.md) を参照してください。
+See [CONTRIBUTING.md](CONTRIBUTING.md) for skill authoring rules and
+[docs/publishing.md](docs/publishing.md) for local installation and release
+procedures.
 
 ## Design principles
 
-- 1 つのスキル実装を Claude Code と Codex で共有する
-- provider 固有の記述は、その provider の機能が本当に必要な場合だけ使う
-- スクリプトは決定的に実行でき、副作用と必要な権限を明示する
-- 小さなスキルを組み合わせ、コンテキスト消費と保守コストを抑える
-- manifest、バージョン、公開手順を CI で継続的に検証する
+- Share one skill implementation between Claude Code and Codex.
+- Use provider-specific behavior only when the provider capability is required.
+- Keep scripts deterministic and make side effects and permissions explicit.
+- Compose focused skills to limit context use and maintenance cost.
+- Continuously validate manifests, versions, and release requirements in CI.
 
 ## License
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenAPI ReDoc PR Screenshots"
+  short_description: "Capture annotated ReDoc diffs for pull requests"
+  default_prompt: "Use $openapi-redoc-pr-screenshots to capture before-and-after ReDoc screenshots for this OpenAPI change and prepare the pull request sections."
