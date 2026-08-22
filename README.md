@@ -1,11 +1,40 @@
 # aburasashi
 
+[English](README.md) | [日本語](README.ja.md)
+
+![aburasashi Agent Skills repository eyecatch](docs/assets/aburasashi-eyecatch-factory-closeup.png)
+
 A collection of Agent Skills for reducing friction, exposing bottlenecks, and
 making everyday software development more efficient.
 
 The repository publishes the same skill implementations to both Claude Code and
 Codex. Skills live only in `plugins/aburasashi/skills/`; platform-specific
 manifests contain distribution metadata rather than duplicated instructions.
+
+## Installation
+
+Install and sign in to at least one supported host before installing
+Aburasashi:
+
+- [Codex CLI](https://developers.openai.com/codex/cli)
+- [Claude Code](https://code.claude.com/docs/en/quickstart)
+
+### Codex
+
+```bash
+codex plugin marketplace add axshia/aburasashi
+codex plugin add aburasashi@aburasashi
+```
+
+### Claude Code
+
+```bash
+claude plugin marketplace add axshia/aburasashi
+claude plugin install aburasashi@aburasashi
+```
+
+Start a new Codex or Claude Code session after installation so the newly
+installed skills are loaded.
 
 ## Skills
 
