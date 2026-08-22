@@ -1,0 +1,107 @@
+openapi: 3.1.0
+info:
+  title: Widget API
+  version: 1.1.0
+tags:
+  - name: Widgets
+paths:
+  /widgets:
+    post:
+      tags: [Widgets]
+      operationId: createWidget
+      summary: Create a widget
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateWidgetRequest"
+      responses:
+        "201":
+          description: Widget created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Widget"
+        "422":
+          description: Invalid widget input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /widgets/{widgetId}:
+    get:
+      tags: [Widgets]
+      operationId: getWidget
+      summary: Get a widget
+      parameters:
+        - name: widgetId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Widget details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Widget"
+        "404":
+          description: Widget not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    CreateWidgetRequest:
+      type: object
+      required: [name, configuration]
+      properties:
+        name:
+          type: string
+          example: Build monitor
+        configuration:
+          type: object
+          required: [color, size]
+          properties:
+            color:
+              type: string
+              example: blue
+            size:
+              type: string
+              enum: [small, medium, large]
+    Widget:
+      type: object
+      required: [id, name, status]
+      properties:
+        id:
+          type: string
+          example: wgt_123
+        name:
+          type: string
+          example: Build monitor
+        status:
+          type: string
+          enum: [active, paused, archived]
+          description: Current lifecycle state, including archived widgets.
+        metadata:
+          type: object
+          properties:
+            owner:
+              type: string
+              example: Platform Team
+            color:
+              type: string
+              example: blue
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+        code:
+          type: string
+          example: request_failed
+        message:
+          type: string
+          example: The request could not be completed.

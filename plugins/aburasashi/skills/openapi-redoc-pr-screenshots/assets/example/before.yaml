@@ -1,0 +1,88 @@
+openapi: 3.1.0
+info:
+  title: Widget API
+  version: 1.0.0
+tags:
+  - name: Widgets
+paths:
+  /widgets/{widgetId}:
+    get:
+      tags: [Widgets]
+      operationId: getWidget
+      summary: Get a widget
+      parameters:
+        - name: widgetId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Widget details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Widget"
+        "404":
+          description: Widget not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    delete:
+      tags: [Widgets]
+      operationId: deleteWidget
+      summary: Delete a widget
+      parameters:
+        - name: widgetId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Widget deleted
+        "404":
+          description: Widget not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Widget:
+      type: object
+      required: [id, name, status]
+      properties:
+        id:
+          type: string
+          example: wgt_123
+        name:
+          type: string
+          example: Build monitor
+        status:
+          type: string
+          enum: [active, paused]
+          description: Current lifecycle state.
+        legacyCode:
+          type: string
+          description: Legacy integration identifier.
+        metadata:
+          type: object
+          properties:
+            owner:
+              type: string
+              example: Platform Team
+            color:
+              type: string
+              example: blue
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+        code:
+          type: string
+          example: request_failed
+        message:
+          type: string
+          example: The request could not be completed.

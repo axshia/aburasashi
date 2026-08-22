@@ -5,13 +5,15 @@ Each distributable skill lives in its own kebab-case directory and has a
 
 ```text
 skills/
-└── example-skill/
+└── openapi-redoc-pr-screenshots/
     ├── SKILL.md
+    ├── README.md
     ├── scripts/      # optional
     ├── references/   # optional
     └── assets/       # optional
 ```
 
-This directory intentionally contains no distributable skill during the
-initial project bootstrap. `make validate-release` will fail until the first
-real skill is added.
+## Available skills
+
+- [OpenAPI ReDoc PR Screenshots](openapi-redoc-pr-screenshots/README.md) creates
+  annotated, per-endpoint ReDoc comparisons for GitHub pull requests.
