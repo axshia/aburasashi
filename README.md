@@ -38,6 +38,14 @@ installed skills are loaded.
 
 ## Skills
 
+- [Figma iOS Simulator Parity](plugins/aburasashi/skills/figma-ios-simulator-parity/README.md)
+  verifies and corrects a SwiftUI or UIKit screen against an exact Figma node
+  on a pinned iOS Simulator, while preserving native controls, safe areas,
+  Dynamic Type, and platform behavior.
+- [Figma Web Parity](plugins/aburasashi/skills/figma-web-parity/README.md)
+  verifies and corrects an in-progress web implementation against an exact,
+  accessible Figma node using normalized captures and root-cause-driven visual
+  diffs; it does not run when Figma design data is unavailable.
 - [OpenAPI ReDoc PR Screenshots](plugins/aburasashi/skills/openapi-redoc-pr-screenshots/README.md)
   detects changed OpenAPI endpoints, creates annotated headless ReDoc captures,
   and prepares per-endpoint Before/After tables for GitHub pull requests.

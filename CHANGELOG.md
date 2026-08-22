@@ -7,6 +7,15 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Added
+
+- Figma iOS Simulator Parity skill for checking and correcting SwiftUI or
+  UIKit screens against exact Figma nodes on pinned devices, runtimes, traits,
+  and capture boundaries while preserving native platform behavior.
+- Figma Web Parity skill for checking and correcting an in-progress web
+  implementation against an exact Figma node with normalized render conditions,
+  root-cause-driven visual diffs, and an explicit no-Figma non-trigger gate.
+
 ## [0.3.0] - 2026-08-22
 
 ### Added

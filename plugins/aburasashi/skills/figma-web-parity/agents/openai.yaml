@@ -1,0 +1,4 @@
+interface:
+  display_name: "Figma Web Parity"
+  short_description: "Align web implementations with accessible Figma designs"
+  default_prompt: "Use $figma-web-parity to compare this web screen with its exact Figma frame and correct the implementation differences."

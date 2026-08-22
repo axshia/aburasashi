@@ -29,7 +29,7 @@
     "defaultPrompt": [
       "Capture before-and-after ReDoc screenshots for this OpenAPI change.",
       "Run owner-approved Playwright QA for this Draft PR and publish desktop and mobile evidence.",
-      "Suggest the smallest change that would remove friction from this task."
+      "Compare this web or iOS screen with its exact Figma frame and correct the implementation differences."
     ]
   }
 }
