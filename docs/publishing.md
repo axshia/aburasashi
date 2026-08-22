@@ -53,9 +53,31 @@ trigger and at least one non-trigger case.
    - `plugins/aburasashi/.claude-plugin/plugin.json`
 3. Run `make validate-release` and `make validate-claude`.
 4. Test each skill in fresh Claude Code and Codex sessions.
-5. Tag the verified commit as `v<version>` and push the tag.
+5. Merge the version-change pull request into `main`.
 
-## 4. Publish
+## 4. Automated GitHub release
+
+After the `Validate` workflow succeeds on a push to `main`, its release job
+compares the plugin version with the previous `main` commit. When the version
+changed, the job:
+
+1. Runs `make validate-release` again with release permissions isolated to the
+   release job.
+2. Creates `v<version>` at the exact validated `main` SHA when the tag does not
+   already exist.
+3. Creates a GitHub Release with generated release notes.
+4. Verifies the remote tag target and published Release URL.
+
+The job is safe to rerun. It reuses a matching tag, skips an existing Release,
+and fails instead of moving a tag that points to another commit. Pull request
+and ordinary validation jobs retain read-only repository permissions; only the
+release job receives `contents: write`.
+
+If a manifest changes without changing its version, or neither manifest version
+changes, no tag or Release is created. The GitHub Release does not submit or
+publish the plugin to the Claude Code or OpenAI marketplaces.
+
+## 5. Publish to marketplaces
 
 - Claude Code: the GitHub repository already contains the required
   `.claude-plugin/marketplace.json`. Users can add `axshia/aburasashi` as a
@@ -74,5 +96,7 @@ positive test cases, three negative test cases, availability, and release
 notes. Keep these materials truthful and consistent with the final skill
 bundle.
 
-Do not publish until `make validate-release` passes and the install has been
-verified from the tagged commit rather than an uncommitted checkout.
+Do not merge a version change until `make validate-release` passes and the skill
+has been exercised from the pull request head. After the workflow publishes the
+tag, verify installation from that tagged commit rather than an uncommitted
+checkout.

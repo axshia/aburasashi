@@ -7,6 +7,16 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-08-22
+
+### Added
+
+- Playwright PR QA skill with an explicit owner-approval gate, isolated
+  multi-user sessions, labeled desktop/mobile evidence, append-only checkpoint
+  comments, and failure-to-retry handoff rules.
+- Automatic GitHub tag and Release creation after a validated plugin version
+  change is merged into `main`.
+
 ## [0.2.0] - 2026-08-22
 
 ### Added
@@ -24,6 +34,7 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 - Dependency-free validation, release checks, and GitHub Actions CI.
 - Contribution and publishing documentation.
 
-[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/axshia/aburasashi/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/axshia/aburasashi/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/axshia/aburasashi/releases/tag/v0.1.0
