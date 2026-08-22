@@ -1,0 +1,4 @@
+interface:
+  display_name: "Figma iOS Simulator Parity"
+  short_description: "Align iOS Simulator screens with Figma designs"
+  default_prompt: "Use $figma-ios-simulator-parity to compare this iOS Simulator screen with its exact Figma frame and correct the implementation differences."

@@ -38,6 +38,14 @@ Claude Code で新しいセッションを開始してください。
 
 ## スキル
 
+- [Figma iOS Simulator Parity](plugins/aburasashi/skills/figma-ios-simulator-parity/README.md)
+  は、正確な Figma ノードと SwiftUI または UIKit の画面を、固定した
+  iOS Simulator 条件で照合・是正します。ネイティブコントロール、safe area、
+  Dynamic Type、プラットフォーム動作を維持します。
+- [Figma Web Parity](plugins/aburasashi/skills/figma-web-parity/README.md)
+  は、正確でアクセス可能な Figma ノードと実装中の Web 画面を、
+  比較条件を揃えたキャプチャと原因別の視覚差分で照合・是正します。
+  Figma デザインデータがない場合は起動しません。
 - [OpenAPI ReDoc PR Screenshots](plugins/aburasashi/skills/openapi-redoc-pr-screenshots/README.md)
   は、変更された OpenAPI エンドポイントを検出し、注釈付きのヘッドレス ReDoc
   キャプチャを作成して、GitHub Pull Request 用にエンドポイントごとの変更前・変更後の
