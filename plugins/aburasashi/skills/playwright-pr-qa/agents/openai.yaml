@@ -1,0 +1,4 @@
+interface:
+  display_name: "Playwright PR QA"
+  short_description: "Run evidence-backed Playwright QA for draft PRs"
+  default_prompt: "Use $playwright-pr-qa to run owner-approved desktop and mobile QA for this Draft PR and publish checkpoint evidence."

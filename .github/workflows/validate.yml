@@ -22,3 +22,131 @@ jobs:
       - name: Validate release tags
         if: startsWith(github.ref, 'refs/tags/v')
         run: make validate-release
+
+  release:
+    name: Release changed plugin version
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Detect manifest version change
+        id: version
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+
+          codex_manifest="plugins/aburasashi/.codex-plugin/plugin.json"
+          claude_manifest="plugins/aburasashi/.claude-plugin/plugin.json"
+          current_codex="$(jq -r '.version' "$codex_manifest")"
+          current_claude="$(jq -r '.version' "$claude_manifest")"
+
+          if [[ "$current_codex" != "$current_claude" ]]; then
+            echo "::error::Plugin manifest versions do not match"
+            exit 1
+          fi
+
+          if ! git cat-file -e "${BEFORE_SHA}^{commit}" 2>/dev/null; then
+            echo "::error::Previous main SHA ${BEFORE_SHA} is unavailable"
+            exit 1
+          fi
+
+          previous_codex="$(git show "${BEFORE_SHA}:${codex_manifest}" | jq -r '.version')"
+          previous_claude="$(git show "${BEFORE_SHA}:${claude_manifest}" | jq -r '.version')"
+
+          if [[ "$previous_codex" != "$previous_claude" ]]; then
+            echo "::error::Previous plugin manifest versions do not match"
+            exit 1
+          fi
+
+          changed=false
+          if [[ "$current_codex" != "$previous_codex" ]]; then
+            changed=true
+          fi
+
+          {
+            echo "changed=${changed}"
+            echo "previous_version=${previous_codex}"
+            echo "version=${current_codex}"
+            echo "tag=v${current_codex}"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "Plugin version: ${previous_codex} -> ${current_codex} (changed: ${changed})" \
+            >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/setup-python@v5
+        if: steps.version.outputs.changed == 'true'
+        with:
+          python-version: "3.12"
+      - name: Validate release
+        if: steps.version.outputs.changed == 'true'
+        run: make validate-release
+      - name: Create GitHub tag and release
+        if: steps.version.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -euo pipefail
+
+          tag_exists=false
+          if git ls-remote --exit-code --tags origin "refs/tags/${TAG}" \
+            >/dev/null 2>&1; then
+            tag_exists=true
+          fi
+
+          release_exists=false
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" \
+            >/dev/null 2>&1; then
+            release_exists=true
+          fi
+
+          if [[ "$tag_exists" == "true" ]]; then
+            git fetch --no-tags --force origin \
+              "refs/tags/${TAG}:refs/tags/${TAG}"
+            tag_sha="$(git rev-list -n 1 "refs/tags/${TAG}")"
+            if [[ "$tag_sha" != "$GITHUB_SHA" ]]; then
+              echo "::error::${TAG} points to ${tag_sha}, expected ${GITHUB_SHA}"
+              exit 1
+            fi
+          elif [[ "$release_exists" == "true" ]]; then
+            echo "::error::Release ${TAG} exists without a matching remote tag"
+            exit 1
+          fi
+
+          release_args=(
+            --repo "$GITHUB_REPOSITORY"
+            --generate-notes
+            --title "$TAG"
+          )
+          version_without_build="${VERSION%%+*}"
+          if [[ "$version_without_build" == *-* ]]; then
+            release_args+=(--prerelease)
+          fi
+
+          if [[ "$release_exists" == "true" ]]; then
+            echo "Release ${TAG} already exists; skipping creation"
+          elif [[ "$tag_exists" == "true" ]]; then
+            gh release create "$TAG" "${release_args[@]}" --verify-tag
+          else
+            gh release create "$TAG" "${release_args[@]}" \
+              --target "$GITHUB_SHA"
+          fi
+
+          git fetch --no-tags --force origin \
+            "refs/tags/${TAG}:refs/tags/${TAG}"
+          tag_sha="$(git rev-list -n 1 "refs/tags/${TAG}")"
+          if [[ "$tag_sha" != "$GITHUB_SHA" ]]; then
+            echo "::error::Published ${TAG} points to ${tag_sha}, expected ${GITHUB_SHA}"
+            exit 1
+          fi
+
+          release_url="$(gh release view "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --json url --jq '.url')"
+          echo "Published [${TAG}](${release_url}) from ${GITHUB_SHA}" \
+            >> "$GITHUB_STEP_SUMMARY"

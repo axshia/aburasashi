@@ -1,6 +1,6 @@
 {
   "name": "aburasashi",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Reusable agent skills for reducing friction and bottlenecks in everyday software development.",
   "author": {
     "name": "axshia",
@@ -28,7 +28,7 @@
     "websiteURL": "https://github.com/axshia/aburasashi",
     "defaultPrompt": [
       "Capture before-and-after ReDoc screenshots for this OpenAPI change.",
-      "Audit this development workflow and identify its biggest bottleneck.",
+      "Run owner-approved Playwright QA for this Draft PR and publish desktop and mobile evidence.",
       "Suggest the smallest change that would remove friction from this task."
     ]
   }
