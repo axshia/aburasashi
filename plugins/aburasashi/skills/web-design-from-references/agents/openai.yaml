@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web Design from References"
+  short_description: "Design web mockups from concept and wireframe images"
+  default_prompt: "Use $web-design-from-references to design website section mockups from my concept image and content-wireframe image."
