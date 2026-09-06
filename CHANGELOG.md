@@ -7,6 +7,12 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Added
+
+- Web Design from References skill for section-by-section web mockups from
+  required concept and content-wireframe images, with explicit input roles,
+  shared visual direction, exact copy, and targeted correction guidance.
+
 ## [0.4.0] - 2026-08-22
 
 ### Added

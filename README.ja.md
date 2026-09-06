@@ -38,6 +38,10 @@ Claude Code で新しいセッションを開始してください。
 
 ## スキル
 
+- [Web Design from References](plugins/aburasashi/skills/web-design-from-references/README.md)
+  は、コンセプト画像と文章・情報構造が読めるワイヤーフレーム画像から、
+  共通のデザイン方針に沿ってWebの各セクションを画像化し、確認・局所修正します。
+  どちらかの入力画像が不足している場合は画像生成を行いません。
 - [Figma iOS Simulator Parity](plugins/aburasashi/skills/figma-ios-simulator-parity/README.md)
   は、正確な Figma ノードと SwiftUI または UIKit の画面を、固定した
   iOS Simulator 条件で照合・是正します。ネイティブコントロール、safe area、

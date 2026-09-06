@@ -38,6 +38,10 @@ installed skills are loaded.
 
 ## Skills
 
+- [Web Design from References](plugins/aburasashi/skills/web-design-from-references/README.md)
+  creates website section mockups from both a brand-concept image and a readable
+  content-wireframe image, with shared art direction and targeted corrections;
+  it does not generate images when either input is missing.
 - [Figma iOS Simulator Parity](plugins/aburasashi/skills/figma-ios-simulator-parity/README.md)
   verifies and corrects a SwiftUI or UIKit screen against an exact Figma node
   on a pinned iOS Simulator, while preserving native controls, safe areas,
