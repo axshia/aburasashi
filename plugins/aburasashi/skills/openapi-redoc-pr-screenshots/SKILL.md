@@ -46,13 +46,17 @@ and PR Markdown generation.
      Before and use `EMPTY REMOVED` for After.
 6. Check the images for secrets, personal information, unrelated application
    state, clipping, unreadable labels, and incorrect accordion state.
-7. Upload pull-request screenshots through the GitHub editor. Prefer the
-   signed-in Chrome session and the `chrome-devtools` MCP when available. Wait
-   until GitHub inserts the final `https://github.com/user-attachments/assets/…`
-   URL, then replace every `{{UPLOAD:file.png}}` placeholder in `pr-section.md`.
-8. Insert the generated sections into the pull request body. If a comment editor
-   was used only to upload files, discard that draft. Reopen the pull request and
-   verify that every image renders in its intended table cell.
+7. Read the shared [GitHub attachment workflow](../../references/github-attachments.md).
+   Prefer native `gh` 2.99.0+ `--attach` for supported hosts, credentials, and
+   media. Merge `pr-section.md` into the current full PR body and use
+   `gh pr edit --body-file` with one `--attach` per image in `capture-plan.json`.
+   The generated Markdown uses `./file.png` references: run `gh` from the
+   output directory with an explicit PR number and `--repo OWNER/REPO`, so the
+   references and attachment arguments resolve to the same files.
+8. Read back the saved body, then reopen the pull request and verify every
+   image renders in its intended table cell. On partial upload failure,
+   preserve successful URLs and recover only missing attachments. Use the
+   shared browser fallback when native attachment support is unavailable.
 
 Stop and report the blocker if the pull request base is uncertain, a changed
 endpoint cannot be rendered, an annotation cannot be placed reliably, or the

@@ -157,20 +157,51 @@ assessment.
 ## Upload screenshots without committing them
 
 Store PR-only images in a temporary or ignored location. Inspect each image
-before upload.
+before upload. Read the shared
+[GitHub attachment workflow](../../../references/github-attachments.md) for
+version, host, credential, file-type, and size checks. Prefer native `gh`
+2.99.0+ when those checks pass; publication remains covered by the QA approval.
 
-Prefer the signed-in Chrome session with the `chrome-devtools` MCP for GitHub
-attachment upload when available. Paste each image into the intended pull
-request comment editor and wait until the editor contains its final
-`https://github.com/user-attachments/assets/...` URL. The event-dispatch return
-value is not proof of success.
+Write the complete checkpoint result to `qa-result.md`, including its run,
+checkpoint, attempt, and status marker. Replace the evidence template fields
+with local Markdown image references, for example:
 
-When an image exists only as bytes in memory, create a browser `File`, place it
-in a `DataTransfer`, and deliver it with a paste event without logging the
-Base64 or credentials. If a separate editor is used only as an upload staging
-area, transfer the final URLs to the intended result comment and discard the
-staging draft instead of posting an upload-only comment.
+```markdown
+| Persona | Browser / project | Desktop | Mobile |
+| --- | --- | --- | --- |
+| requester | chromium | ![Requester desktop at QA-01, attempt 1](./qa-01-requester-desktop.png) | ![Requester mobile at QA-01, attempt 1](./qa-01-requester-mobile.png) |
+```
 
-After submitting, reopen the pull request and verify every image renders under
-the correct checkpoint and attempt. A local screenshot path or an editor-only
-preview is not published evidence.
+Run from the directory containing those images, specifying the target PR and
+repository. Attach every required persona/browser/surface file once:
+
+```bash
+gh pr comment 123 --repo OWNER/REPO --body-file qa-result.md \
+  --attach ./qa-01-requester-desktop.png \
+  --attach ./qa-01-requester-mobile.png
+```
+
+`gh` rewrites the image destinations to uploaded URLs in their table cells.
+Do not use `--edit-last` or `--delete-last` for this append-only ledger. If a
+single checkpoint requires more than 50 images, obtain their URLs through the
+shared browser staging workflow and publish one complete result body.
+
+### Repair incomplete evidence
+
+A non-zero exit can still leave a posted result with only some images. Before
+retrying, inspect the returned comment URL and locate the run/checkpoint/attempt
+marker in the PR comments. If a result exists, keep it and its successful URLs;
+do not post the same result again or overwrite it.
+
+Append an evidence-repair comment linking the original result, identifying the
+same run/checkpoint/attempt and the missing evidence, and attaching only those
+files. Make clear that the original result is incomplete until all repaired
+images render, even if its text says PASS. Repairing an upload does not itself
+rerun QA or increment the attempt number. If there is no posted result, recover
+any successful asset URLs and publish the intended result after fixing the
+upload problem.
+
+After publication, read back the saved Markdown and reopen the exact comment
+to verify every image under the correct checkpoint and attempt. The completion
+ledger must link any repair comments alongside the original result. A local
+path, printed comment URL, or editor preview is not verified published evidence.

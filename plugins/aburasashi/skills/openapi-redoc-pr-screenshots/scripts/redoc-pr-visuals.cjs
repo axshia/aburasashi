@@ -735,10 +735,10 @@ function markdownFor(plan) {
     let afterCell;
     if (!endpoint.before) beforeCell = "**EMPTY**";
     else {
-      beforeCell = `![Before ReDoc for ${title}]({{UPLOAD:${endpoint.before.image}}})`;
+      beforeCell = `![Before ReDoc for ${title}](./${endpoint.before.image})`;
     }
     if (!endpoint.after) afterCell = "**EMPTY REMOVED**";
-    else afterCell = `![After ReDoc for ${title}]({{UPLOAD:${endpoint.after.image}}})`;
+    else afterCell = `![After ReDoc for ${title}](./${endpoint.after.image})`;
     lines.push(`| ${beforeCell} | ${afterCell} |`, "");
   }
   return `${lines.join("\n").trimEnd()}\n`;
