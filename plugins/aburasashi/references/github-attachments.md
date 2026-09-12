@@ -86,6 +86,9 @@ do not overwrite an earlier result to fix publication.
 
 Read back the saved Markdown and reopen the PR or exact result comment. On
 GitHub.com expect final `https://github.com/user-attachments/assets/...` URLs.
+Check those stable URLs in the saved Markdown; the browser may render signed
+CDN URLs instead. Verify decoded images without logging signed URL query
+strings.
 Verify every image renders in its intended cell, checkpoint, and attempt, with
 no unresolved local references or unintended duplicates. A zero exit code,
 local preview, or successful API read does not replace this visual check.
