@@ -7,6 +7,19 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-09-12
+
+### Fixed
+
+- Prefer native `gh` 2.99.0+ image and video attachments in the ReDoc and
+  Playwright PR evidence workflows, with documented support checks and a
+  browser fallback.
+- Generate normal relative image references in ReDoc comparison Markdown so
+  `gh --attach` can publish images in their intended table cells.
+- Recover partial uploads without duplicating successful attachments or
+  overwriting Playwright result history, and distinguish saved attachment URLs
+  from signed browser image sources during verification.
+
 ## [0.5.0] - 2026-09-07
 
 ### Added
@@ -53,7 +66,8 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 - Dependency-free validation, release checks, and GitHub Actions CI.
 - Contribution and publishing documentation.
 
-[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.5.1...HEAD
+[0.5.1]: https://github.com/axshia/aburasashi/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/axshia/aburasashi/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/axshia/aburasashi/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/axshia/aburasashi/compare/v0.2.0...v0.3.0
