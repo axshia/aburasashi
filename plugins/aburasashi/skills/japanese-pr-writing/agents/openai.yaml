@@ -1,0 +1,4 @@
+interface:
+  display_name: "Japanese PR Writing"
+  short_description: "PR文書を自然な日本語に整え、技術的な意味と検証結果を保つ"
+  default_prompt: "$japanese-pr-writing で、PR文書を自然でわかりやすい日本語に整えてください。技術的な意味、検証結果、既存の構成を維持してください。"

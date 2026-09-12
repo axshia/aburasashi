@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "aburasashi",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Reusable agent skills for reducing friction and bottlenecks in everyday software development.",
   "author": {
     "name": "axshia",
