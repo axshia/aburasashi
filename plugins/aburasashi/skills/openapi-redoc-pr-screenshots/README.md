@@ -15,6 +15,7 @@ the Markdown needed to publish them in a GitHub pull request.
 - Uses `EMPTY` and `EMPTY REMOVED` for intentionally missing table cells.
 - Installs pinned Redocly CLI and Playwright packages into an external cache, so
   neither package needs to be installed in the target repository.
+- Generates local Markdown image references ready for native `gh --attach`.
 
 ## Run it
 
@@ -76,8 +77,35 @@ the endpoint was removed.
 
 ## Publish to a pull request
 
-Upload the generated images through the GitHub pull request editor so GitHub
-creates `user-attachments` URLs. Replace the `{{UPLOAD:file.png}}` placeholders
-in `pr-section.md`, add the sections to the pull request body, and reopen the
-pull request to verify that every image renders. Do not commit screenshots that
-exist only as pull request evidence.
+Use `gh` 2.99.0+ with `--body-file` and repeatable `--attach`. Read the shared
+[GitHub attachment workflow](../../references/github-attachments.md) for
+host/token support, limits, partial failures, and the browser fallback.
+
+The generated `pr-section.md` references images as `./file.png`. Run publication
+commands from the output directory, with an explicit repository and PR number.
+First fetch the existing PR body:
+
+```bash
+cd /path/to/openapi-pr-visuals
+gh pr view 123 --repo OWNER/REPO --json body --jq '.body' > pr-body.md
+```
+
+Merge `pr-section.md` into `pr-body.md`, preserving unrelated sections and
+existing URLs. Reconcile intervening edits before writing. For the sample
+capture plan, publish the four images with:
+
+```bash
+gh pr edit 123 --repo OWNER/REPO --body-file pr-body.md \
+  --attach ./delete-widget-before.png \
+  --attach ./get-widget-before.png \
+  --attach ./get-widget-after.png \
+  --attach ./create-widget-after.png
+```
+
+For another plan, attach each non-empty `before.image` and `after.image` once;
+do not glob stale images from earlier runs. `--plan-only` does not create PNGs.
+For a new authorized PR, `gh pr create --title ... --body-file pr-body.md`
+accepts the same attachment flags.
+
+Read back the saved body and reopen the PR to verify every image renders in
+its table cell. Do not commit screenshots that exist only as PR evidence.

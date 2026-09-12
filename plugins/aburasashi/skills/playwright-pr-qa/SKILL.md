@@ -148,8 +148,9 @@ out-of-scope surface; do not hide it as completed coverage.
 ## Artifact handling
 
 Keep pull-request-only captures outside the repository or in an already ignored
-temporary directory. Do not commit them. Prefer the signed-in Chrome session
-and `chrome-devtools` MCP for GitHub attachment upload when available, while
-keeping those GitHub tabs separate from the isolated Playwright application
-contexts. Verify the final `github.com/user-attachments` URLs and reopen the
-pull request to confirm every image renders.
+temporary directory. Do not commit them. Prefer native `gh` 2.99.0+
+`gh pr comment --body-file ... --attach ...` for approved evidence publication.
+Follow [references/pr-evidence.md](references/pr-evidence.md#upload-screenshots-without-committing-them)
+for local Markdown references, the shared support checks and browser fallback,
+and append-only recovery after partial uploads. Read back the saved comment and
+reopen it to confirm every planned image renders under the correct attempt.

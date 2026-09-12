@@ -13,6 +13,8 @@ several users, states, browsers, or form factors make manual verification slow.
 - Captures separate desktop and mobile evidence with a top-right identity and
   browser label.
 - Posts one append-only PASS or FAIL comment for every checkpoint attempt.
+- Publishes images with native `gh` 2.99.0+ `--attach`, with a browser fallback
+  when the CLI cannot upload the requested evidence.
 - Stops on failure, returns diagnosis evidence to the invoking session, and
   resumes at the failed checkpoint after an authorized fix.
 - Publishes a final completion comment only when every frozen condition passes.
@@ -42,3 +44,8 @@ users on desktop and mobile, and publish the evidence to the PR.
 The skill adapts to the target repository's existing Playwright configuration,
 fixtures, browser support policy, and PR language. It does not require PR-only
 screenshots to be committed to the target repository.
+
+See [PR evidence](references/pr-evidence.md#upload-screenshots-without-committing-them)
+for `--body-file` / `--attach` examples and append-only evidence repairs, and
+the shared [attachment workflow](../../references/github-attachments.md) for
+supported hosts, credentials, media types, and upload verification.
