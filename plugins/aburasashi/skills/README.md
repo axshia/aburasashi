@@ -5,6 +5,11 @@ Each distributable skill lives in its own kebab-case directory and has a
 
 ```text
 skills/
+├── japanese-pr-writing/
+│   ├── SKILL.md
+│   ├── README.md
+│   ├── agents/
+│   └── references/
 ├── web-design-from-references/
 │   ├── SKILL.md
 │   ├── README.md
@@ -32,6 +37,9 @@ skills/
 
 ## Available skills
 
+- [Japanese PR Writing](japanese-pr-writing/README.md) drafts and improves
+  Japanese pull request copy while preserving technical meaning, validation
+  status, and Markdown structure.
 - [Web Design from References](web-design-from-references/README.md) creates
   website section mockups from a brand-concept image and a readable content
   wireframe, with no image output when either required input is missing.

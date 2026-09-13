@@ -7,6 +7,14 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-09-13
+
+### Added
+
+- Japanese PR Writing skill for clear, natural Japanese pull request copy,
+  with primary-source research and examples that preserve technical meaning,
+  validation status, and Markdown structure.
+
 ## [0.5.1] - 2026-09-12
 
 ### Fixed
@@ -66,7 +74,8 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 - Dependency-free validation, release checks, and GitHub Actions CI.
 - Contribution and publishing documentation.
 
-[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.5.1...HEAD
+[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/axshia/aburasashi/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/axshia/aburasashi/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/axshia/aburasashi/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/axshia/aburasashi/compare/v0.3.0...v0.4.0

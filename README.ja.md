@@ -38,6 +38,8 @@ Claude Code で新しいセッションを開始してください。
 
 ## スキル
 
+- [Japanese PR Writing](plugins/aburasashi/skills/japanese-pr-writing/README.md)
+  は、PR 文書を自然でわかりやすい日本語で執筆・推敲し、技術的な意味、検証状態、既存の Markdown 構造を維持します。
 - [Web Design from References](plugins/aburasashi/skills/web-design-from-references/README.md)
   は、コンセプト画像と文章・情報構造が読めるワイヤーフレーム画像から、
   共通のデザイン方針に沿ってWebの各セクションを画像化し、確認・局所修正します。

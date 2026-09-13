@@ -38,6 +38,9 @@ installed skills are loaded.
 
 ## Skills
 
+- [Japanese PR Writing](plugins/aburasashi/skills/japanese-pr-writing/README.md)
+  drafts and improves Japanese pull request copy while preserving technical
+  meaning, validation status, and existing Markdown structure.
 - [Web Design from References](plugins/aburasashi/skills/web-design-from-references/README.md)
   creates website section mockups from both a brand-concept image and a readable
   content-wireframe image, with shared art direction and targeted corrections;
