@@ -7,6 +7,13 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Added
+
+- Logical Thinking skill for evaluating mismatches with expectations, comparing
+  approaches, and explaining decisions with explicit evidence and constraints.
+  Includes scoped trigger cues, cross-domain examples, and ten behavioral
+  evaluation cases with separate inputs and grading criteria.
+
 ## [0.7.0] - 2026-09-14
 
 ### Added
