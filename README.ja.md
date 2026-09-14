@@ -58,7 +58,8 @@ Codex では、スキルの description が会話の開始時に読み込むよ�
   ブートストラップスキルです。
 
 - [Logical Thinking — 論理思考](plugins/aburasashi/skills/logical-thinking/README.md)
-  は、期待とのずれや方式の妥当性を、目的・比較基準・証拠・制約に分けて検討します。
+  は、仕様・要件策定、UI／UX設計、マーケティング思考を少しでも行うときに起動します。
+  新規の検討や小さな判断、期待とのずれや方式の妥当性を、目的・比較基準・証拠・制約に分けて検討します。
   短い判断手順、異なる題材の回答例、評価ケースを備え、依頼範囲を守って結論を示します。
 - [Japanese PR Writing](plugins/aburasashi/skills/japanese-pr-writing/README.md)
   は、PR 文書を自然でわかりやすい日本語で執筆・推敲し、技術的な意味、検証状態、既存の Markdown 構造を維持します。

@@ -1,6 +1,6 @@
 ---
 name: logical-thinking
-description: Evaluate a questionable result, investigate a mismatch with expectations or established practice, compare approaches, or explain a decision using evidence and explicit constraints. Use for requests such as "一般的な方式と違う", "そもそもどうすべき", "なぜこの判断か", or "妥当か検討して". Do not add a proposal workflow to simple factual lookup, translation, formatting, or execution of an already settled plan.
+description: Use whenever any part of a task involves formulating or revising specifications or requirements, UI design, UX design, or marketing thinking, even a small decision during implementation. Invoke before considering those decisions; a request for critique or comparison is not required. Also evaluate questionable results, compare approaches, investigate mismatches, and explain decisions using evidence and explicit constraints. Do not add a proposal workflow to pure factual lookup, translation, formatting, or execution of a fully specified plan with no new design decision.
 ---
 
 # Logical Thinking
@@ -8,6 +8,19 @@ description: Evaluate a questionable result, investigate a mismatch with expecta
 依頼の目的、比較基準、証拠、制約を分け、読み手が判断できる結論を出す。
 現状の説明だけで終えず、必要な場合は適切な方向まで示す。
 特定の製品、定番方式、回答文を常に正解にしない。
+
+## 判断を始める前に起動する
+
+依頼の一部でも、次の検討を行うなら起動する。新規作成、修正、レビューを含み、「妥当か」「比較して」と言われる必要はない。
+
+- 仕様・要件策定：振る舞い、対象範囲、優先順位、制約、受入条件を決める。
+- UI設計：情報の配置、視覚的な優先順位、部品、表示状態を決める。
+- UX設計：利用者の目的、操作の流れ、迷いや負担、体験のつながりを考える。
+- マーケティング思考：対象顧客、提供価値、訴求、集客経路、効果検証を考える。
+
+実装や文章作成が主な依頼でも、その途中で小さな設計判断が必要になった時点で、判断する前に読み込む。
+適用するか迷う場合も起動し、依頼に必要な判断だけに使う。
+これらの用語を含むだけの転記・翻訳・整形や、新しい判断を伴わない決定済み方針の実行には、追加の検討を持ち込まない。
 
 ## 依頼の範囲を決める
 

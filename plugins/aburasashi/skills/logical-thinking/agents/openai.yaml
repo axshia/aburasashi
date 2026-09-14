@@ -1,4 +1,4 @@
 interface:
   display_name: "Logical Thinking"
-  short_description: "目的・比較基準・事実・制約を分け、根拠のある結論と提案を示す"
+  short_description: "仕様・要件策定、UI／UX設計、マーケティングの小さな判断から根拠を確かめる"
   default_prompt: "$logical-thinking で、この依頼の目的と比較基準を確認し、現状の事実・制約・仮説を分けて、根拠のある結論を示してください。"
