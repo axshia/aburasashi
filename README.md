@@ -58,9 +58,10 @@ model to load it at the start of every conversation. User instructions in
   cues for every other aburasashi skill.
 
 - [Logical Thinking](plugins/aburasashi/skills/logical-thinking/README.md)
-  evaluates questionable results and compares approaches by separating intent,
-  evidence, requirements, and temporary constraints, with examples and behavioral
-  evaluation cases that preserve the user's requested scope.
+  applies whenever work includes specification or requirements formulation,
+  UI/UX design, or marketing thinking, even a small decision. It also evaluates
+  questionable results and compares approaches by separating intent, evidence,
+  requirements, and temporary constraints while preserving the requested scope.
 - [Japanese PR Writing](plugins/aburasashi/skills/japanese-pr-writing/README.md)
   drafts and improves Japanese pull request copy while preserving technical
   meaning, validation status, and existing Markdown structure.

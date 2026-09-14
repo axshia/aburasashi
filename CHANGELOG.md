@@ -7,6 +7,12 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Invoke `logical-thinking` for specification and requirements formulation,
+  UI/UX design, and marketing thinking, including small decisions within other
+  tasks; add native-host activation cases and retain settled-task boundaries.
+
 ## [0.8.0] - 2026-09-14
 
 ### Added

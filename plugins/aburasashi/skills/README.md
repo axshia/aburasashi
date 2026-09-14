@@ -54,9 +54,10 @@ skills/
 - [Using Aburasashi](using-aburasashi/README.md) is the bootstrap skill that
   establishes the 1% trigger rule: invoke a skill before responding whenever
   there is even a 1% chance it applies, and let the skill check its own inputs.
-- [Logical Thinking](logical-thinking/README.md) evaluates questionable results,
-  compares approaches, and explains decisions by separating intent, evidence,
-  requirements, and temporary constraints without expanding the requested scope.
+- [Logical Thinking](logical-thinking/README.md) applies to specification or
+  requirements formulation, UI/UX design, and marketing thinking, even a small
+  part of another task. It also evaluates questionable results, compares approaches,
+  and explains decisions without expanding the requested scope.
 - [Japanese PR Writing](japanese-pr-writing/README.md) drafts and improves
   Japanese pull request copy while preserving technical meaning, validation
   status, and Markdown structure.
