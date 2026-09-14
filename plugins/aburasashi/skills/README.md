@@ -5,6 +5,10 @@ Each distributable skill lives in its own kebab-case directory and has a
 
 ```text
 skills/
+├── using-aburasashi/
+│   ├── SKILL.md
+│   ├── README.md
+│   └── agents/
 ├── japanese-pr-writing/
 │   ├── SKILL.md
 │   ├── README.md
@@ -37,6 +41,9 @@ skills/
 
 ## Available skills
 
+- [Using Aburasashi](using-aburasashi/README.md) is the bootstrap skill that
+  establishes the 1% trigger rule: invoke a skill before responding whenever
+  there is even a 1% chance it applies, and let the skill check its own inputs.
 - [Japanese PR Writing](japanese-pr-writing/README.md) drafts and improves
   Japanese pull request copy while preserving technical meaning, validation
   status, and Markdown structure.

@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# SessionStart hook for the aburasashi plugin.
+#
+# Injects the using-aburasashi bootstrap skill into the session context so the
+# model applies the 1% trigger rule to every aburasashi skill from the first
+# response onward. Runs at startup, after /clear, and after compaction.
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+BOOTSTRAP_SKILL="${PLUGIN_ROOT}/skills/using-aburasashi/SKILL.md"
+
+bootstrap_content=$(cat "${BOOTSTRAP_SKILL}" 2>&1 || echo "Error reading using-aburasashi skill")
+
+# Escape a string for embedding in a JSON string literal. Each substitution is
+# a single pass over the string.
+escape_for_json() {
+    local s="$1"
+    s="${s//\\/\\\\}"
+    s="${s//\"/\\\"}"
+    s="${s//$'\n'/\\n}"
+    s="${s//$'\r'/\\r}"
+    s="${s//$'\t'/\\t}"
+    printf '%s' "$s"
+}
+
+bootstrap_escaped=$(escape_for_json "$bootstrap_content")
+session_context="<EXTREMELY_IMPORTANT>\nYou have aburasashi skills.\n\n**Below is the full content of your 'aburasashi:using-aburasashi' skill - the trigger rule for every aburasashi skill. For all other skills, use the 'Skill' tool:**\n\n${bootstrap_escaped}\n</EXTREMELY_IMPORTANT>"
+
+# Claude Code reads hookSpecificOutput.additionalContext. Other harnesses that
+# run Claude Code-style hooks read the SDK-standard top-level additionalContext.
+# Emit only the field the current platform consumes; Claude Code reads both
+# without deduplication.
+#
+# printf is used instead of a heredoc to avoid the bash 5.3+ heredoc hang.
+if [ -n "${CLAUDE_PLUGIN_ROOT:-}" ] && [ -z "${COPILOT_CLI:-}" ]; then
+  printf '{\n  "hookSpecificOutput": {\n    "hookEventName": "SessionStart",\n    "additionalContext": "%s"\n  }\n}\n' "$session_context" | cat
+else
+  printf '{\n  "additionalContext": "%s"\n}\n' "$session_context" | cat
+fi
+
+exit 0

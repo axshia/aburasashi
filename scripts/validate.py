@@ -5,7 +5,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -15,6 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PLUGIN_NAME = "aburasashi"
 PLUGIN_ROOT = ROOT / "plugins" / PLUGIN_NAME
 SKILLS_ROOT = PLUGIN_ROOT / "skills"
+HOOKS_ROOT = PLUGIN_ROOT / "hooks"
+BOOTSTRAP_SKILL = "using-aburasashi"
 SEMVER = re.compile(
     r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)"
     r"(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?"
@@ -96,6 +100,12 @@ class Validator:
             if manifest.get("license") != "MIT":
                 self.error(f"{context}.license must equal 'MIT'")
 
+        if codex.get("hooks") != {}:
+            self.error(
+                "codex plugin.hooks must be an empty object so Codex does not run "
+                "the Claude Code session hook"
+            )
+
         if codex.get("version") != claude.get("version"):
             self.error("Claude and Codex plugin versions must match")
         if codex.get("description") != claude.get("description"):
@@ -173,6 +183,90 @@ class Validator:
         else:
             self.require_text(owner, "name", "claude marketplace.owner")
 
+    def validate_hooks(self) -> None:
+        hooks_json = self.load_json("plugins/aburasashi/hooks/hooks.json")
+        events = hooks_json.get("hooks")
+        entries = events.get("SessionStart") if isinstance(events, dict) else None
+        if not isinstance(entries, list) or not entries:
+            self.error("hooks.json must register at least one SessionStart hook")
+        else:
+            commands = [
+                hook
+                for entry in entries
+                if isinstance(entry, dict)
+                for hook in entry.get("hooks") or []
+                if isinstance(hook, dict)
+            ]
+            bootstrap = [
+                hook
+                for hook in commands
+                if hook.get("type") == "command"
+                and isinstance(hook.get("command"), str)
+                and hook["command"].endswith('run-hook.cmd" session-start')
+            ]
+            if len(bootstrap) != 1:
+                self.error(
+                    "hooks.json must run run-hook.cmd session-start exactly once"
+                )
+            elif bootstrap[0].get("shell") != "bash":
+                self.error("hooks.json SessionStart hook must set shell to 'bash'")
+
+        for name in ("run-hook.cmd", "session-start"):
+            path = HOOKS_ROOT / name
+            if not path.is_file():
+                self.error(f"plugins/aburasashi/hooks/{name} is missing")
+            elif not os.access(path, os.X_OK):
+                self.error(f"plugins/aburasashi/hooks/{name} must be executable")
+
+        bootstrap_skill = SKILLS_ROOT / BOOTSTRAP_SKILL / "SKILL.md"
+        if not bootstrap_skill.is_file():
+            self.error(f"bootstrap skill {BOOTSTRAP_SKILL!r} is missing SKILL.md")
+            return
+        script = HOOKS_ROOT / "session-start"
+        if not script.is_file():
+            return
+
+        try:
+            result = subprocess.run(
+                ["bash", str(script)],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                timeout=30,
+                env={
+                    "PATH": os.environ.get("PATH", ""),
+                    "CLAUDE_PLUGIN_ROOT": str(PLUGIN_ROOT),
+                },
+                check=False,
+            )
+        except (OSError, subprocess.TimeoutExpired) as exc:
+            self.error(f"session-start hook could not run: {exc}")
+            return
+        if result.returncode != 0:
+            self.error(
+                f"session-start hook exited with {result.returncode}: "
+                f"{result.stderr.strip()}"
+            )
+            return
+        try:
+            payload = json.loads(result.stdout)
+        except json.JSONDecodeError as exc:
+            self.error(f"session-start hook printed invalid JSON: {exc}")
+            return
+        output = payload.get("hookSpecificOutput") if isinstance(payload, dict) else None
+        if not isinstance(output, dict) or output.get("hookEventName") != "SessionStart":
+            self.error("session-start hook must emit hookSpecificOutput for SessionStart")
+            return
+        context = output.get("additionalContext")
+        if not isinstance(context, str) or not context.strip():
+            self.error("session-start hook emitted an empty additionalContext")
+            return
+        expected = bootstrap_skill.read_text(encoding="utf-8").strip()
+        if expected not in context:
+            self.error(
+                f"session-start hook context must contain {BOOTSTRAP_SKILL}/SKILL.md"
+            )
+
     @staticmethod
     def frontmatter_value(frontmatter: str, key: str) -> str | None:
         match = re.search(
@@ -236,6 +330,7 @@ class Validator:
     def run(self) -> int:
         self.validate_plugin_manifests()
         self.validate_marketplaces()
+        self.validate_hooks()
         skill_count = self.validate_skills()
         if self.errors:
             for message in self.errors:

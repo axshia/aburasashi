@@ -1,0 +1,4 @@
+interface:
+  display_name: "Using Aburasashi"
+  short_description: "Apply the 1% trigger rule to every aburasashi skill"
+  default_prompt: "Use $using-aburasashi to decide which aburasashi skills apply to my next request, then invoke them before responding."

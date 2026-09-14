@@ -16,6 +16,7 @@
     "bottleneck"
   ],
   "skills": "./skills/",
+  "hooks": {},
   "interface": {
     "displayName": "Aburasashi",
     "shortDescription": "Reduce friction in everyday development.",

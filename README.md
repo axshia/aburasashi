@@ -36,7 +36,26 @@ claude plugin install aburasashi@aburasashi
 Start a new Codex or Claude Code session after installation so the newly
 installed skills are loaded.
 
+## How skills trigger
+
+Aburasashi applies a 1% rule: if there is even a 1% chance a skill applies to
+the current request, the agent invokes that skill before responding, exploring
+the codebase, or checking whether the skill's inputs exist. Descriptions such as
+"use only when Figma data is available" describe the entry check the skill runs
+after it starts, not a reason to delay the invocation.
+
+The rule lives in the
+[Using Aburasashi](plugins/aburasashi/skills/using-aburasashi/README.md)
+bootstrap skill. In Claude Code, a `SessionStart` hook injects it at startup,
+after `/clear`, and after compaction. In Codex, the skill's description asks the
+model to load it at the start of every conversation. User instructions in
+`CLAUDE.md`, `AGENTS.md`, or the request itself take precedence over the rule.
+
 ## Skills
+
+- [Using Aburasashi](plugins/aburasashi/skills/using-aburasashi/README.md)
+  is the bootstrap skill that establishes the 1% trigger rule and the trigger
+  cues for every other aburasashi skill.
 
 - [Japanese PR Writing](plugins/aburasashi/skills/japanese-pr-writing/README.md)
   drafts and improves Japanese pull request copy while preserving technical
@@ -78,6 +97,7 @@ for added and removed endpoint examples, installation behavior, and usage.
 ├── plugins/aburasashi/
 │   ├── .codex-plugin/plugin.json          # Codex/OpenAI manifest
 │   ├── .claude-plugin/plugin.json         # Claude Code manifest
+│   ├── hooks/                             # Claude Code SessionStart bootstrap
 │   └── skills/                            # shared skill implementation
 ├── scripts/validate.py                    # dependency-free validation
 └── docs/publishing.md                     # test and release procedure
