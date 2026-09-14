@@ -45,6 +45,12 @@ codex plugin add aburasashi@aburasashi
 Start a new session after installation, then exercise every skill's documented
 trigger and at least one non-trigger case.
 
+In Claude Code, also confirm that the bootstrap loaded: ask which aburasashi
+skills apply to a borderline request such as "make this PR easy to review". The
+agent should name the matching skill and invoke it before doing anything else.
+`make validate` already runs `hooks/session-start` and checks that its JSON
+output contains `using-aburasashi/SKILL.md`.
+
 ## 3. Prepare a release
 
 1. Add user-facing changes to `CHANGELOG.md`.

@@ -36,7 +36,26 @@ claude plugin install aburasashi@aburasashi
 インストールしたスキルを読み込むため、インストール後に Codex または
 Claude Code で新しいセッションを開始してください。
 
+## スキルの起動条件
+
+Aburasashi は 1% ルールを適用します。依頼に対してスキルが該当する可能性が
+1% でもあれば、エージェントは応答、コード調査、スキルの入力確認より前に
+そのスキルを起動します。「Figma データがある場合のみ使用する」といった
+description の記述は、スキルが起動後に行う入口チェックの説明であり、
+起動を遅らせる理由にはなりません。
+
+このルールは
+[Using Aburasashi](plugins/aburasashi/skills/using-aburasashi/README.md)
+ブートストラップスキルに記述しています。Claude Code では `SessionStart`
+フックが起動時、`/clear` 後、コンパクション後にこのスキルを注入します。
+Codex では、スキルの description が会話の開始時に読み込むよう求めます。
+`CLAUDE.md`、`AGENTS.md`、依頼文でのユーザー指示は、このルールより優先されます。
+
 ## スキル
+
+- [Using Aburasashi](plugins/aburasashi/skills/using-aburasashi/README.md)
+  は、1% の起動ルールと、他のすべての aburasashi スキルの起動条件を定める
+  ブートストラップスキルです。
 
 - [Japanese PR Writing](plugins/aburasashi/skills/japanese-pr-writing/README.md)
   は、PR 文書を自然でわかりやすい日本語で執筆・推敲し、技術的な意味、検証状態、既存の Markdown 構造を維持します。
@@ -80,6 +99,7 @@ Claude Code で新しいセッションを開始してください。
 ├── plugins/aburasashi/
 │   ├── .codex-plugin/plugin.json          # Codex/OpenAI マニフェスト
 │   ├── .claude-plugin/plugin.json         # Claude Code マニフェスト
+│   ├── hooks/                             # Claude Code SessionStart ブートストラップ
 │   └── skills/                            # 共通のスキル実装
 ├── scripts/validate.py                    # 外部依存のない検証スクリプト
 └── docs/publishing.md                     # テストとリリースの手順

@@ -21,6 +21,20 @@ The directory name and frontmatter `name` must match. Put optional executable
 helpers, detailed documentation, and reusable files in `scripts/`,
 `references/`, and `assets/` inside that skill directory.
 
+Add a row for the new skill to the trigger-cue table in
+`plugins/aburasashi/skills/using-aburasashi/SKILL.md`. That bootstrap skill is
+injected into every Claude Code session, so keep the row to one line of
+concrete cues and do not summarize the skill's workflow there.
+
+## Trigger rule
+
+Skills trigger under a 1% rule: the agent invokes a skill before responding
+whenever there is even a 1% chance it applies. Write descriptions so the
+triggering situations are easy to recognize. Precondition sentences such as
+"use only when Figma data is available" are allowed, but the skill body must
+then perform that check itself and say what to ask for when an input is
+missing, because the agent invokes the skill before confirming inputs.
+
 ## Compatibility rules
 
 - Write provider-neutral instructions by default so the same `SKILL.md` works
@@ -30,6 +44,9 @@ helpers, detailed documentation, and reusable files in `scripts/`,
 - Name exact products only when the workflow genuinely depends on them.
 - Do not reference files outside the plugin directory. Marketplace installers
   copy plugins into isolated caches.
+- Keep `plugins/aburasashi/hooks/session-start` and `run-hook.cmd` executable
+  and free of external dependencies; the Codex manifest must keep `"hooks": {}`
+  so Codex does not try to run the Claude Code hook.
 - Never include credentials, local absolute paths, private URLs, or personal
   data in a skill or fixture.
 - Document network access, destructive actions, and required user approvals.

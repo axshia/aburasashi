@@ -7,6 +7,18 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Added
+
+- Using Aburasashi bootstrap skill that establishes the 1% trigger rule: invoke
+  an aburasashi skill before responding whenever there is even a 1% chance it
+  applies, and let the skill check its own inputs instead of postponing the
+  invocation.
+- Claude Code `SessionStart` hook that injects the bootstrap skill at startup,
+  after `/clear`, and after compaction, with an empty `hooks` object in the
+  Codex manifest so Codex keeps native skill discovery.
+- Repository validation for the hook registration, executable hook scripts,
+  and the injected session context.
+
 ## [0.6.0] - 2026-09-13
 
 ### Added
