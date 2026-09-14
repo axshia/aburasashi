@@ -31,6 +31,7 @@ Invoke first. The skill then verifies its inputs and tells you what to ask for w
 
 | Cue in the request or context | Invoke |
 | --- | --- |
+| A questionable result or design; mismatch with expectations or established practice; comparing approaches or asking why a decision was made | `logical-thinking` |
 | A pull request title, body, review reply, or validation report in Japanese; reviewers who read Japanese | `japanese-pr-writing` |
 | A Japanese reply, explanation, progress report, or document for the user; the first Japanese response of a session; "わかりやすく", "まとめて", "ドキュメント化", "説明して" | `japanese-native-writing` |
 | An OpenAPI file changed and a pull request is being prepared; reviewers need to see API changes | `openapi-redoc-pr-screenshots` |
