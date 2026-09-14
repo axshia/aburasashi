@@ -18,6 +18,11 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
   Codex manifest so Codex keeps native skill discovery.
 - Repository validation for the hook registration, executable hook scripts,
   and the injected session context.
+- Japanese Native Writing skill that shapes Japanese replies and documents for
+  the user: conclusion and consequence first, explicit done, unverified,
+  not-done, unknown, and missing-input status, options with trade-offs and a
+  single decision, terms glossed on first use, sparse emphasis, and ASCII
+  diagrams only where relationships need them.
 
 ## [0.6.0] - 2026-09-13
 

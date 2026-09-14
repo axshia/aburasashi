@@ -14,6 +14,11 @@ skills/
 │   ├── README.md
 │   ├── agents/
 │   └── references/
+├── japanese-native-writing/
+│   ├── SKILL.md
+│   ├── README.md
+│   ├── agents/
+│   └── references/
 ├── web-design-from-references/
 │   ├── SKILL.md
 │   ├── README.md
@@ -47,6 +52,10 @@ skills/
 - [Japanese PR Writing](japanese-pr-writing/README.md) drafts and improves
   Japanese pull request copy while preserving technical meaning, validation
   status, and Markdown structure.
+- [Japanese Native Writing](japanese-native-writing/README.md) writes clear,
+  native Japanese replies and documents: conclusion first, explicit done,
+  unverified, not-done, unknown, and missing status, options with trade-offs,
+  and sparse formatting.
 - [Web Design from References](web-design-from-references/README.md) creates
   website section mockups from a brand-concept image and a readable content
   wireframe, with no image output when either required input is missing.
