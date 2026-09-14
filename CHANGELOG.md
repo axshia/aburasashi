@@ -7,6 +7,8 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+## [0.8.1] - 2026-09-14
+
 ### Changed
 
 - Invoke `logical-thinking` for specification and requirements formulation,
@@ -108,7 +110,8 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 - Dependency-free validation, release checks, and GitHub Actions CI.
 - Contribution and publishing documentation.
 
-[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.8.1...HEAD
+[0.8.1]: https://github.com/axshia/aburasashi/compare/v0.8.0...v0.8.1
 [0.8.0]: https://github.com/axshia/aburasashi/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/axshia/aburasashi/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/axshia/aburasashi/compare/v0.5.1...v0.6.0
