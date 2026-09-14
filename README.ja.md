@@ -59,6 +59,9 @@ Codex では、スキルの description が会話の開始時に読み込むよ�
 
 - [Japanese PR Writing](plugins/aburasashi/skills/japanese-pr-writing/README.md)
   は、PR 文書を自然でわかりやすい日本語で執筆・推敲し、技術的な意味、検証状態、既存の Markdown 構造を維持します。
+- [Japanese Native Writing](plugins/aburasashi/skills/japanese-native-writing/README.md)
+  は、セッション中の返答とドキュメントを、結論と結果を先に置き、実施済み・未確認・未実施・不明・不足を分け、
+  選択肢を同じ観点で並べた分かりやすい日本語にします。PR 文面は Japanese PR Writing が担当します。
 - [Web Design from References](plugins/aburasashi/skills/web-design-from-references/README.md)
   は、コンセプト画像と文章・情報構造が読めるワイヤーフレーム画像から、
   共通のデザイン方針に沿ってWebの各セクションを画像化し、確認・局所修正します。

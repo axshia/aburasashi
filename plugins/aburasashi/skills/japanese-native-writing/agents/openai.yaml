@@ -1,0 +1,4 @@
+interface:
+  display_name: "Japanese Native Writing"
+  short_description: "返答とドキュメントを、結論先出しで分かりやすい日本語にする"
+  default_prompt: "$japanese-native-writing で、この内容を結論から先に、やっていないことと分からないことを分けて、分かりやすい日本語で提示してください。"

@@ -60,6 +60,11 @@ model to load it at the start of every conversation. User instructions in
 - [Japanese PR Writing](plugins/aburasashi/skills/japanese-pr-writing/README.md)
   drafts and improves Japanese pull request copy while preserving technical
   meaning, validation status, and existing Markdown structure.
+- [Japanese Native Writing](plugins/aburasashi/skills/japanese-native-writing/README.md)
+  writes clear, native Japanese replies and documents for the user: conclusion
+  and consequence first, explicit done, unverified, not-done, unknown, and
+  missing-input status, options with trade-offs and one decision, and sparse
+  emphasis; pull request copy stays with Japanese PR Writing.
 - [Web Design from References](plugins/aburasashi/skills/web-design-from-references/README.md)
   creates website section mockups from both a brand-concept image and a readable
   content-wireframe image, with shared art direction and targeted corrections;
