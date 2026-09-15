@@ -82,6 +82,9 @@ Codex では、スキルの description が会話の開始時に読み込むよ�
   は、変更された OpenAPI エンドポイントを検出し、注釈付きのヘッドレス ReDoc
   キャプチャを作成して、GitHub Pull Request 用にエンドポイントごとの変更前・変更後の
   表を準備します。
+- [Playwright E2E Recording](plugins/aburasashi/skills/playwright-e2e-recording/SKILL.md)
+  は、その場で実行できる Playwright シナリオを作り、成功・失敗を含めて E2E を録画します。
+  動画・チェックポイントの画像・検証結果を保存し、PR 作成スキルへ引き継ぎます。
 - [Playwright PR QA](plugins/aburasashi/skills/playwright-pr-qa/README.md)
   は、オーナー承認済みのマルチユーザー Web QA を実行し、ラベル付きのデスクトップ・
   モバイル証跡を取得して、追記専用のチェックポイント結果を Draft Pull Request に

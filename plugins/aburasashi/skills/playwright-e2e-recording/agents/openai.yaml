@@ -1,0 +1,4 @@
+interface:
+  display_name: "Playwright E2E Recording"
+  short_description: "Record runnable E2E journeys and prepare PR evidence"
+  default_prompt: "Use $playwright-e2e-recording to run this E2E journey, record every attempt, and prepare evidence for the PR workflow."

@@ -43,6 +43,12 @@ skills/
 │   ├── scripts/
 │   ├── references/
 │   └── assets/
+├── playwright-e2e-recording/
+│   ├── SKILL.md
+│   ├── agents/
+│   ├── scripts/
+│   ├── references/
+│   └── assets/
 └── playwright-pr-qa/
     ├── SKILL.md
     ├── README.md
@@ -79,3 +85,6 @@ skills/
 - [Playwright PR QA](playwright-pr-qa/README.md) runs approved multi-user and
   multi-state browser QA with labeled desktop/mobile evidence and append-only PR
   checkpoint comments.
+- [Playwright E2E Recording](playwright-e2e-recording/SKILL.md) creates and runs
+  instant Playwright scenarios, records successful and failed attempts, and
+  hands video, screenshots, and a result manifest to PR creation workflows.

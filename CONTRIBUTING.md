@@ -58,6 +58,16 @@ make validate
 make validate-claude  # when Claude Code CLI is available
 ```
 
+For changes to the E2E recording helper, run its local browser integration checks:
+
+```bash
+uv run --with playwright==1.62.0 python scripts/test-recorded-e2e.py
+```
+
+They use a local HTTP fixture and isolated Chrome contexts to check successful
+recordings, closed popups, failures, blockers, and incomplete scenarios. Chrome
+and Playwright's video encoder are required; FFmpeg enables the MP4 checks.
+
 Before publishing a version, update both plugin manifests to the same semantic
 version, update `CHANGELOG.md`, and run:
 
