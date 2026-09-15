@@ -147,6 +147,16 @@ out-of-scope surface; do not hide it as completed coverage.
 
 ## Artifact handling
 
+When recorded E2E evidence is requested, compose with
+[playwright-e2e-recording](../playwright-e2e-recording/SKILL.md). Use its
+[PR handoff](../playwright-e2e-recording/references/pr-handoff.md) for video
+finalization, run/checkpoint/page mapping, inspection, and relative artifact
+paths. Keep this skill's existing plan, scope approval, labeled screenshots,
+and append-only result comments. A video supplements those checkpoint captures;
+it does not replace them. Reuse authorization that already covers recording and
+publication. Attach whole-run videos after contexts close, linking them to the
+earlier checkpoint comments without delaying those required result comments.
+
 Keep pull-request-only captures outside the repository or in an already ignored
 temporary directory. Do not commit them. Prefer native `gh` 2.99.0+
 `gh pr comment --body-file ... --attach ...` for approved evidence publication.

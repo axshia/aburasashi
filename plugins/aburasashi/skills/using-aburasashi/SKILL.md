@@ -36,6 +36,7 @@ Invoke first. The skill then verifies its inputs and tells you what to ask for w
 | A Japanese reply, explanation, progress report, or document for the user; the first Japanese response of a session; "わかりやすく", "まとめて", "ドキュメント化", "説明して" | `japanese-native-writing` |
 | An OpenAPI file changed and a pull request is being prepared; reviewers need to see API changes | `openapi-redoc-pr-screenshots` |
 | A Draft pull request needs browser QA; multi-user or multi-state web flows; desktop and mobile evidence | `playwright-pr-qa` |
+| Record an E2E browser journey, make an instant Playwright script, or supply recorded test evidence to a PR workflow | `playwright-e2e-recording` |
 | A web screen should match a design; "the design", "the mockup", a Figma link or node | `figma-web-parity` |
 | An iOS screen should match a design; SwiftUI, UIKit, or the iOS Simulator with a design reference | `figma-ios-simulator-parity` |
 | A website or landing-page mockup; a brand image plus a wireframe image; visual design exploration | `web-design-from-references` |

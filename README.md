@@ -85,6 +85,9 @@ model to load it at the start of every conversation. User instructions in
 - [OpenAPI ReDoc PR Screenshots](plugins/aburasashi/skills/openapi-redoc-pr-screenshots/README.md)
   detects changed OpenAPI endpoints, creates annotated headless ReDoc captures,
   and prepares per-endpoint Before/After tables for GitHub pull requests.
+- [Playwright E2E Recording](plugins/aburasashi/skills/playwright-e2e-recording/SKILL.md)
+  creates immediately runnable Playwright scenarios, records every attempt, and
+  prepares video, checkpoint screenshots, and structured results for PR workflows.
 - [Playwright PR QA](plugins/aburasashi/skills/playwright-pr-qa/README.md)
   runs owner-approved multi-user web QA, captures labeled desktop and mobile
   evidence, and publishes append-only checkpoint results to Draft pull requests.

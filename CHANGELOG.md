@@ -7,6 +7,19 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Added
+
+- Playwright E2E Recording skill for immediately runnable browser scenarios,
+  video of every attempt, checkpoint screenshots, and structured PR evidence.
+- A standalone recording runner, a note.com walkthrough example, and local
+  browser checks covering success, closed popups, failure, blockers, and
+  incomplete scenarios.
+
+### Changed
+
+- Connect recorded E2E artifacts to Japanese PR Writing and Playwright PR QA,
+  preserving validation status, media review, and publication boundaries.
+
 ## [0.8.1] - 2026-09-14
 
 ### Changed
