@@ -6,6 +6,7 @@ Requires Chrome and the Playwright video encoder; ffmpeg enables the MP4 check.
 """
 
 import hashlib
+import importlib.util
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
@@ -146,6 +147,28 @@ def run(page, recording):
 ''', 1)
         self.assertEqual(result["status"], "FAIL")
         self.assertEqual([r["status"] for r in result["checkpoints"]], ["PASS", "NOT_RUN"])
+
+    def test_note_topic_selection_supports_both_observed_routes(self):
+        from playwright.sync_api import sync_playwright
+
+        spec = importlib.util.spec_from_file_location("note_example", RUNNER.parent.parent / "assets/note_keyword.py")
+        example = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(example)
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch(channel="chrome", headless=True)
+            try:
+                page = browser.new_page()
+                for route in ("/hashtag/", "/tag/"):
+                    page.set_content('<base href="https://note.com"><aside><a href="/tag/sidebar">Sidebar</a></aside>'
+                        '<section><h2>注目キーワード</h2>' + ''.join(
+                            f'<a style="display:inline-block;width:100px" href="{route}{index}">Topic {index}</a>'
+                            for index in (1, 2, 3, 4)) + '</section>')
+                    _, links = example.section_links(page, "注目キーワード", ("/hashtag/", "/tag/"))
+                    _, selected, candidates = example.select_card(links, 3)
+                    self.assertEqual(selected["href"], f"https://note.com{route}3")
+                    self.assertEqual(len(candidates), 4)
+            finally:
+                browser.close()
 
 
 if __name__ == "__main__":

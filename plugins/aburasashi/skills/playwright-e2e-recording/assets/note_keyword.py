@@ -27,10 +27,10 @@ def section_links(page, heading, href_part):
     """Use the closest heading ancestor that also contains the matching cards."""
     title = page.get_by_role("heading", name=heading, exact=True)
     expect(title).to_be_visible()
-    section = title.locator(
-        f"xpath=ancestor::*[.//a[contains(@href, '{href_part}')]][1]"
-    )
-    links = section.locator(f'a[href*="{href_part}"]')
+    href_parts = (href_part,) if isinstance(href_part, str) else href_part
+    predicate = " or ".join(f"contains(@href, '{part}')" for part in href_parts)
+    section = title.locator(f"xpath=ancestor::*[.//a[{predicate}]][1]")
+    links = section.locator(", ".join(f'a[href*="{part}"]' for part in href_parts))
     expect(links.first).to_be_attached()
     return title, links
 
@@ -59,7 +59,7 @@ def click_card(page, link, selected):
     # Only follow the actual note article/topic link seen in the inspected UI.
     target = urlparse(selected["href"])
     assert target.scheme == "https" and target.hostname in {"note.com", "note.jp"}
-    assert "/hashtag/" in target.path or "/n/" in target.path
+    assert any(part in target.path for part in ("/hashtag/", "/tag/", "/n/"))
     if selected["target"] == "_blank":
         with page.expect_popup() as popup:
             link.click()
@@ -106,7 +106,7 @@ def run(page, recording):
     with recording.step("open-home", page) as evidence:
         response = page.goto(recording.base_url, wait_until="domcontentloaded")
         assert response and response.ok
-        heading, links = section_links(page, "注目キーワード", "/hashtag/")
+        heading, links = section_links(page, "注目キーワード", ("/hashtag/", "/tag/"))
         heading.scroll_into_view_if_needed()
         link, topic, candidates = select_card(links, 3)
         link.hover()

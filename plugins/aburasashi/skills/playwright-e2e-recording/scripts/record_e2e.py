@@ -36,6 +36,14 @@ def utc_now():
     return datetime.now(timezone.utc).isoformat()
 
 
+def error_summary(error):
+    # Playwright assertion errors may append the entire accessible page tree.
+    # Keep the assertion/call log in the PR handoff; screenshots and opt-in
+    # traces retain detailed failure context for local inspection.
+    message = str(error).split("Aria snapshot:", 1)[0].strip()
+    return f"{type(error).__name__}: {message[:3000]}"
+
+
 def public_url(url):
     value = urlsplit(url)
     return urlunsplit((value.scheme, value.netloc.split("@")[-1], value.path, "", ""))
@@ -110,7 +118,7 @@ class Recording:
             row["status"] = "PASS"
         except BaseException as error:
             row["status"] = "BLOCKED" if isinstance(error, (Blocked, KeyboardInterrupt)) else "FAIL"
-            row["error"] = f"{type(error).__name__}: {error}"
+            row["error"] = error_summary(error)
             raise
         finally:
             row["end_seconds"] = self.seconds()
@@ -260,7 +268,7 @@ def main():
             recording.result["status"] = "PASS"
         except (Exception, KeyboardInterrupt) as error:
             recording.result["status"] = "BLOCKED" if isinstance(error, (Blocked, KeyboardInterrupt)) else "FAIL"
-            recording.result["error"] = f"{type(error).__name__}: {error}"
+            recording.result["error"] = error_summary(error)
         finally:
             if context:
                 if trace_started:

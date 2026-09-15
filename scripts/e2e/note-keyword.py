@@ -47,10 +47,10 @@ def section_links(page, heading, href_part):
     """Use the closest heading ancestor that also contains the matching cards."""
     title = page.get_by_role("heading", name=heading, exact=True)
     expect(title).to_be_visible()
-    section = title.locator(
-        f"xpath=ancestor::*[.//a[contains(@href, '{href_part}')]][1]"
-    )
-    links = section.locator(f'a[href*="{href_part}"]')
+    href_parts = (href_part,) if isinstance(href_part, str) else href_part
+    predicate = " or ".join(f"contains(@href, '{part}')" for part in href_parts)
+    section = title.locator(f"xpath=ancestor::*[.//a[{predicate}]][1]")
+    links = section.locator(", ".join(f'a[href*="{part}"]' for part in href_parts))
     expect(links.first).to_be_attached()
     return title, links
 
@@ -81,7 +81,7 @@ def click_card(page, link, selected):
     # Only follow the actual note article/topic link seen in the inspected UI.
     target = urlparse(selected["href"])
     assert target.scheme == "https" and target.hostname in {"note.com", "note.jp"}
-    assert "/hashtag/" in target.path or "/n/" in target.path
+    assert any(part in target.path for part in ("/hashtag/", "/tag/", "/n/"))
     if selected["target"] == "_blank":
         with page.expect_popup() as popup:
             link.click()
@@ -158,7 +158,7 @@ def main():
             response = page.goto("https://note.com/", wait_until="domcontentloaded")
             assert response and response.ok, "Home page failed to load"
             heading = "今日の注目記事" if args.target == "featured-article" else "注目キーワード"
-            href_part = "/n/" if args.target == "featured-article" else "/hashtag/"
+            href_part = "/n/" if args.target == "featured-article" else ("/hashtag/", "/tag/")
             title, links = section_links(page, heading, href_part)
             checkpoint("open-note-home")
             page.wait_for_timeout(1000)  # Hold the initial screen for the video.
