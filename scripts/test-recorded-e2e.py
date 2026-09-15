@@ -167,6 +167,18 @@ def run(page, recording):
                     _, selected, candidates = example.select_card(links, 3)
                     self.assertEqual(selected["href"], f"https://note.com{route}3")
                     self.assertEqual(len(candidates), 4)
+                page.goto(self.base_url + "/tag/3")
+                for control in (
+                    '<h2>人気の記事一覧</h2>',
+                    '<div role="group" aria-label="ソート切り替え"><a href="/tag/3">人気</a></div>',
+                ):
+                    page.set_content('<aside><a href="/n/sidebar">Sidebar</a></aside><section>'
+                        + control + '<a href="/n/first">First article</a>'
+                        '<a href="/n/second">Second article</a></section>')
+                    _, links = example.popular_article_links(page)
+                    _, selected, candidates = example.select_card(links, 1)
+                    self.assertEqual(selected["href"], self.base_url + "/n/first")
+                    self.assertEqual(len(candidates), 2)
             finally:
                 browser.close()
 

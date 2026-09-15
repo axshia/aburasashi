@@ -55,6 +55,24 @@ def section_links(page, heading, href_part):
     return title, links
 
 
+def popular_article_links(page):
+    """Locate the article list in both observed note topic layouts."""
+    legacy = page.get_by_role("heading", name="人気の記事一覧", exact=True)
+    popular = page.get_by_role("group", name="ソート切り替え", exact=True).get_by_role(
+        "link", name="人気", exact=True)
+    expect(legacy.or_(popular).first).to_be_visible()
+    if legacy.is_visible():
+        return section_links(page, "人気の記事一覧", "/n/")
+    destination = popular.evaluate("element => element.href")
+    if page.url.split("#")[0] != destination:
+        popular.click()
+        page.wait_for_url(destination, wait_until="domcontentloaded")
+    section = popular.locator("xpath=ancestor::section[.//a[contains(@href, '/n/')]][1]")
+    links = section.locator('a[href*="/n/"]')
+    expect(links.first).to_be_attached()
+    return popular, links
+
+
 def select_card(links, position):
     candidates = links.evaluate_all("""links => links.map((a, index) => {
       const r = a.getBoundingClientRect();
@@ -175,7 +193,7 @@ def main():
             checkpoint("open-third-card")
 
             if args.target == "keyword-article":
-                title, links = section_links(page, "人気の記事一覧", "/n/")
+                title, links = popular_article_links(page)
                 title.scroll_into_view_if_needed()
                 link, article, candidates = select_card(links, 1)
                 result["article_selection"] = {"heading": "人気の記事一覧", "position": 1,
