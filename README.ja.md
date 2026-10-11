@@ -66,6 +66,9 @@ Codex では、スキルの description が会話の開始時に読み込むよ�
 - [Japanese Native Writing](plugins/aburasashi/skills/japanese-native-writing/README.md)
   は、セッション中の返答とドキュメントを、結論と結果を先に置き、実施済み・未確認・未実施・不明・不足を分け、
   選択肢を同じ観点で並べた分かりやすい日本語にします。PR 文面は Japanese PR Writing が担当します。
+- [Japanese Article Writing](plugins/aburasashi/skills/japanese-article-writing/README.md)
+  は、技術ブログ、ノウハウ・解説記事、お知らせなど、社外に公開する日本語記事を、結論を先に置いたリード、
+  要点から始まる段落、一次情報を中心にした文章にします。一次情報が足りなければ、一般論で埋めずに質問します。
 - [Web Design from References](plugins/aburasashi/skills/web-design-from-references/README.md)
   は、コンセプト画像と文章・情報構造が読めるワイヤーフレーム画像から、
   共通のデザイン方針に沿ってWebの各セクションを画像化し、確認・局所修正します。

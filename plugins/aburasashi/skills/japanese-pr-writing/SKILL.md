@@ -1,6 +1,6 @@
 ---
 name: japanese-pr-writing
-description: Draft, rewrite, or review natural, clear Japanese for GitHub pull request titles, descriptions, review replies, and validation reports. Use when preparing Japanese PR copy or improving its grammar and readability. Do not use for general Japanese prose, code review alone, or GitHub publishing operations alone.
+description: Draft, rewrite, or review natural, clear Japanese for GitHub pull request titles, descriptions, review replies, and validation reports. Use when preparing Japanese PR copy or improving its grammar and readability. Do not use for general Japanese prose, articles for outside readers, code review alone, or GitHub publishing operations alone.
 ---
 
 # Japanese PR Writing
@@ -53,10 +53,11 @@ PR に掲載する日本語を、初めて読むレビュアーが変更の目�
 
 - **主語と述語**：文頭の話題に文末が対応しているか確認する。主語の省略が自然で誤解もない文に、主語を機械的に足さない。
 - **修飾と指示**：どの語を説明しているか、「これ」「その」が何を指すかを明確にする。語順や読点を変えても曖昧さが残る場合は、名詞を明示するか文を分ける。
-- **文のつながり**：「〜し、〜して、〜が」と論点を連結しすぎない。文を分ける際も、条件・例外・因果関係を対応する文に残す。文字数だけで分割を決めない。
+- **文のつながり**：「〜し、〜して、〜が」と論点を連結しすぎない。「て、」「り、」「し、」「が、」で別々のポイントをつないでいたら、関係が弱ければ文を切り、強ければ「〜ので」などで関係を示す。順接の「が、」は使わない。逆接の「が、」も、前後が別々のポイントなら文を切り、「しかし」「ただし」で始める。文を分ける際も、条件・例外・因果関係を対応する文に残す。文字数だけで分割を決めない。
+- **文頭と文末**：文頭には前の文や見出しに出た語を置き、新しい情報は文末に回す。新しいクラス名や設定名で文を始めず、既出の語で受けてから出す。
 - **助詞と並列**：「は・が・を・に」の対応、同じ助詞の重なり、列挙した語と述語の結び付きを確認する。対象と動作が読み取れる形に直す。
 - **動作の明示**：「確認を実施する」は「確認する」のように簡潔にできる。「対応」「整備」「担保」などは、何をするか不明な場合に具体化する。単語そのものを禁止しない。
-- **態と否定**：主体が分かりにくい受け身や、読みにくい否定表現を見直す。受け身が自然な場合は残し、許可・禁止・必要性の違いを失う肯定形への置換はしない。
+- **態と否定**：主体が分かりにくい受け身は見直す。既出の語を主語に保つための受け身は残す。二重否定は、意味を変えない形で肯定文に直す（「承認しない限り公開されない」は「公開するには承認が必要」）。許可・禁止・必要性の違いを失う肯定形への置換はしない。
 - **文体**：指定と既存の文体に合わせる。新規で指定がなければ本文は「です・ます」を基本とし、過剰な敬語や前置きを省く。タイトルや見出しの体言止めは許容する。会話用の口調は、掲載文の文体とは別に判断する。
 
 ## 表記と Markdown を保つ

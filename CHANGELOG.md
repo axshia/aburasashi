@@ -7,6 +7,22 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Added
+
+- Japanese Article Writing skill for Japanese articles published to outside
+  readers: conclusion-first leads, paragraphs that open with their point,
+  first-hand facts at the center, article-type templates, and rewrites of
+  common AI-sounding patterns. It asks for missing first-hand facts or marks
+  where they belong instead of padding to a word count.
+
+### Changed
+
+- Add point-first paragraphs and one point per sentence to Japanese Native
+  Writing, and known-to-new sentence order, one point per sentence, and
+  double-negative rewrites to Japanese PR Writing, limited to failures seen in
+  before-and-after evaluations; route article bodies to Japanese Article
+  Writing.
+
 ## [0.9.0] - 2026-09-15
 
 ### Added
