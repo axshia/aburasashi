@@ -24,6 +24,11 @@ skills/
 │   ├── README.md
 │   ├── agents/
 │   └── references/
+├── japanese-article-writing/
+│   ├── SKILL.md
+│   ├── README.md
+│   ├── agents/
+│   └── references/
 ├── web-design-from-references/
 │   ├── SKILL.md
 │   ├── README.md
@@ -71,6 +76,12 @@ skills/
   native Japanese replies and documents: conclusion first, explicit done,
   unverified, not-done, unknown, and missing status, options with trade-offs,
   and sparse formatting.
+- [Japanese Article Writing](japanese-article-writing/README.md) writes
+  Japanese articles for outside readers, such as tech blog posts, how-to and
+  explainer articles, and release announcements: a lead that states the
+  conclusion, paragraphs that open with their point, first-hand facts at the
+  center, and rewrites of common AI-sounding patterns. When first-hand facts
+  are missing, it asks for them or marks where they belong instead of padding.
 - [Web Design from References](web-design-from-references/README.md) creates
   website section mockups from a brand-concept image and a readable content
   wireframe, with no image output when either required input is missing.

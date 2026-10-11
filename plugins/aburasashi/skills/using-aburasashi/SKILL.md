@@ -34,6 +34,7 @@ Invoke first. The skill then verifies its inputs and tells you what to ask for w
 | Any specification or requirements formulation, UI design, UX design, or marketing thinking, even a small part of implementation or writing; also questionable results, mismatches, approach comparisons, or decision rationale | `logical-thinking` |
 | A pull request title, body, review reply, or validation report in Japanese; reviewers who read Japanese | `japanese-pr-writing` |
 | A Japanese reply, explanation, progress report, or document for the user; the first Japanese response of a session; "わかりやすく", "まとめて", "ドキュメント化", "説明して" | `japanese-native-writing` |
+| A Japanese article for outside readers: owned media, a company or tech blog post, a how-to, explainer, or comparison, a release announcement; "記事", "ブログ", "オウンドメディア", "お知らせ"; a Japanese draft that reads as AI-written, padded, or generic | `japanese-article-writing` |
 | An OpenAPI file changed and a pull request is being prepared; reviewers need to see API changes | `openapi-redoc-pr-screenshots` |
 | A Draft pull request needs browser QA; multi-user or multi-state web flows; desktop and mobile evidence | `playwright-pr-qa` |
 | Record an E2E browser journey, make an instant Playwright script, or supply recorded test evidence to a PR workflow | `playwright-e2e-recording` |

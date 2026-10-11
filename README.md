@@ -70,6 +70,11 @@ model to load it at the start of every conversation. User instructions in
   and consequence first, explicit done, unverified, not-done, unknown, and
   missing-input status, options with trade-offs and one decision, and sparse
   emphasis; pull request copy stays with Japanese PR Writing.
+- [Japanese Article Writing](plugins/aburasashi/skills/japanese-article-writing/README.md)
+  writes Japanese articles for outside readers (tech blogs, how-to and explainer
+  articles, release announcements) with a conclusion-first lead, paragraphs that
+  open with their point, and first-hand facts at the center; it asks for missing
+  first-hand facts instead of padding with generic content.
 - [Web Design from References](plugins/aburasashi/skills/web-design-from-references/README.md)
   creates website section mockups from both a brand-concept image and a readable
   content-wireframe image, with shared art direction and targeted corrections;
