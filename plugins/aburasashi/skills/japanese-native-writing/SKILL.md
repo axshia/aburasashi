@@ -1,6 +1,6 @@
 ---
 name: japanese-native-writing
-description: Use when writing any Japanese reply, explanation, progress report, or document for the user, including the first Japanese response of a session, after context compaction, and before starting a Japanese document such as a design note, procedure, or survey report. Also use when the request says わかりやすく, まとめて, 説明して, or ドキュメント化. Do not use for pull request titles, bodies, or review replies; use japanese-pr-writing for those.
+description: Use when writing any Japanese reply, explanation, progress report, or document for the user, including the first Japanese response of a session, after context compaction, and before starting a Japanese document such as a design note, procedure, or survey report. Also use when the request says わかりやすく, まとめて, 説明して, or ドキュメント化. Do not use for pull request titles, bodies, or review replies, or for the body of a Japanese article for outside readers; use japanese-pr-writing or japanese-article-writing for those.
 ---
 
 # Japanese Native Writing
@@ -13,6 +13,7 @@ description: Use when writing any Japanese reply, explanation, progress report, 
 
 - 対象は、ユーザーに提示する日本語の返答と、依頼された日本語ドキュメント（設計メモ、手順書、調査報告など）。
 - PR のタイトル、本文、レビュー返信、検証報告は `japanese-pr-writing` に渡す。ここでは扱わない。
+- 社外に公開する記事の本文は `japanese-article-writing` に渡す。記事について依頼者に返す質問や報告は、ここで扱う。
 - ユーザーやリポジトリの文体・表記の指定があればそれを優先する。指定がなければ返答は「です・ます」。ユーザーが常体で書いていれば合わせる。
 - コード、コマンド、パス、識別子、エラー文、URL はそのまま保つ。
 
@@ -51,6 +52,11 @@ CI の通過は未確認（実機）として書く。テストの追加は、�
 - 本番反映、削除、外部公開のように戻せない選択は、その旨を書く。
 - 最後の 1 文で、どの案にするかを 1 つの質問として聞く。「進めてよいか」と「どの案か」は別のメッセージで聞く。
 
+## 段落と文を組む
+
+- 段落は 1 トピックにし、冒頭にその要点を 1 文で置く。「以下で説明します」のような予告だけの文は要点にならない。
+- 1 文に 1 ポイントを書く。「て、」「り、」「し、」「が、」で別々のポイントをつないでいたら文を切る。順接の「が、」は使わない。手順の羅列は例外。
+
 ## 用語、強調、図の使いどころ
 
 専門用語は初出時に括弧で 20 字前後の説明を添え、以後は省く。
@@ -83,6 +89,7 @@ CI の通過は未確認（実機）として書く。テストの追加は、�
 - 5 状態が混ざっていないか。情報源にない事実を補っていないか。
 - 太字が 3 種類の箇所だけで数か所以内か。コード書式が逐語的な文字列だけか。
 - 括弧補足のない初出の専門用語がないか。
+- 段落の第 1 文だけを読んで要点が通るか。「て、」「り、」「し、」「が、」で別々のポイントをつないでいないか。
 
 根拠と例が必要なときは[調査メモ](references/research.md)と[書き換え例](references/examples.md)を読む。
 通常の利用にネットワークアクセスは不要。文章を外部の校正サービスへ送らない。
