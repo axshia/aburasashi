@@ -24,7 +24,7 @@
 
 ```text
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_018nmrC51XkzRnXf2FCjXnf7
+Claude-Session: <会話の system-reminder で指定された URL>
 ```
 
 - push と PR 作成の前に、ユーザーに確認する。
@@ -698,7 +698,7 @@ git add plugins/aburasashi/skills/japanese-article-writing
 git commit -m "feat: add japanese-article-writing skill
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_018nmrC51XkzRnXf2FCjXnf7"
+Claude-Session: <会話の system-reminder で指定された URL>"
 ```
 
 ---
@@ -825,7 +825,7 @@ git add plugins/aburasashi/skills/japanese-article-writing/SKILL.md
 git commit -m "fix: tighten japanese-article-writing after evaluation
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_018nmrC51XkzRnXf2FCjXnf7"
+Claude-Session: <会話の system-reminder で指定された URL>"
 ```
 
 変更がなければコミットしない。
@@ -987,7 +987,7 @@ git add plugins/aburasashi/skills/japanese-native-writing
 git commit -m "feat: add paragraph and sentence rules to japanese-native-writing
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_018nmrC51XkzRnXf2FCjXnf7"
+Claude-Session: <会話の system-reminder で指定された URL>"
 ```
 
 ---
@@ -1115,7 +1115,7 @@ git add plugins/aburasashi/skills/japanese-pr-writing
 git commit -m "feat: add sentence-flow rules to japanese-pr-writing
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_018nmrC51XkzRnXf2FCjXnf7"
+Claude-Session: <会話の system-reminder で指定された URL>"
 ```
 
 ---
@@ -1219,7 +1219,7 @@ git add plugins/aburasashi/skills/using-aburasashi/SKILL.md plugins/aburasashi/s
 git commit -m "docs: register japanese-article-writing in catalogs and changelog
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_018nmrC51XkzRnXf2FCjXnf7"
+Claude-Session: <会話の system-reminder で指定された URL>"
 ```
 
 ---
