@@ -7,6 +7,20 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Japanese Article Writing chooses the opening by article type: how-to,
+  comparison, and proposal articles may open with a short, topic-specific scene
+  as long as the conclusion or key points come before the first heading, while
+  tech blogs and important announcements still open with the conclusion. It
+  separates such scenes from generic hooks and forbids presenting imagined
+  scenes as real experiences, quotes, or trends.
+- Add pacing rules, a calm and friendly default voice that avoids both stiff and
+  childish narration, and comparison-table rules: state the conditions first,
+  ask one question per item, use five status labels, and never turn "not
+  stated" into "not supported". Revise the conclusion-first, lead-order, and
+  AI-pattern rules that conflicted with these changes.
+
 ## [0.10.0] - 2026-10-11
 
 ### Added

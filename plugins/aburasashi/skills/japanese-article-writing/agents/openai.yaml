@@ -1,4 +1,4 @@
 interface:
   display_name: "Japanese Article Writing"
-  short_description: "公開する記事を、総論先出しと一次情報中心の日本語にする"
+  short_description: "公開する記事を、早く要点に届く導入と一次情報中心の日本語にする"
   default_prompt: "$japanese-article-writing で、この材料から記事を書いてください。一次情報が足りなければ、書く前に質問してください。"
