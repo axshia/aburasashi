@@ -77,10 +77,12 @@ skills/
   unverified, not-done, unknown, and missing status, options with trade-offs,
   and sparse formatting.
 - [Japanese Article Writing](japanese-article-writing/README.md) writes
-  Japanese articles for outside readers, such as tech blog posts, how-to and
-  explainer articles, and release announcements: a lead that states the
-  conclusion, paragraphs that open with their point, first-hand facts at the
-  center, and rewrites of common AI-sounding patterns. When first-hand facts
+  Japanese articles for outside readers, such as tech blog posts, how-to,
+  explainer, and comparison articles, and release announcements: an opening
+  chosen by article type that reaches the point before the first heading,
+  paragraphs that open with their point, pacing and a calm, friendly voice,
+  comparison tables with consistent conditions and status labels, first-hand
+  facts at the center, and rewrites of common AI-sounding patterns. When first-hand facts
   are missing, it asks for them or marks where they belong instead of padding.
 - [Web Design from References](web-design-from-references/README.md) creates
   website section mockups from a brand-concept image and a readable content
