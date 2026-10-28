@@ -7,6 +7,8 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-10-28
+
 ### Changed
 
 - Japanese PR Writing writes new PR descriptions and structural rewrites in
@@ -180,7 +182,8 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 - Dependency-free validation, release checks, and GitHub Actions CI.
 - Contribution and publishing documentation.
 
-[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.10.1...HEAD
+[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/axshia/aburasashi/compare/v0.10.1...v0.11.0
 [0.10.1]: https://github.com/axshia/aburasashi/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/axshia/aburasashi/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/axshia/aburasashi/compare/v0.8.1...v0.9.0
