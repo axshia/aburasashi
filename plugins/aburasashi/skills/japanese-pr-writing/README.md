@@ -23,6 +23,12 @@ $japanese-pr-writing で、指定した差分と変更メモから日本語の P
 
 「文法だけ」「タイトルだけ」「本文のみ」「修正理由も説明」などの指定もできます。
 文面の作成だけを依頼した場合、GitHub への投稿は行いません。
+本文に詰め込むと長くなる補足は、差分に付けるインラインコメントの案として出します。
+
+Claude Code でタイトルや本文を作る・直す場合は、文案を Codex の `gpt-6.1-terra`（Terra 6.1）に書かせ、Claude が事実と照合します。
+[codex プラグイン](https://github.com/openai/codex-plugin-cc)または codex CLI が必要です。
+どちらも使えない場合は、別のモデルで代用せず、その理由と再開方法を伝えます。
+詳しくは [Codex への依頼手順](references/codex-delegation.md) を参照してください。
 
 Claude Code では、プラグイン名を含むスラッシュコマンドでも呼び出せます。
 

@@ -7,6 +7,27 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Japanese PR Writing writes new PR descriptions and structural rewrites in
+  three steps: outline the conclusion, section roles, and one point per
+  paragraph; compose the Japanese directly from the outline instead of writing
+  in English and translating; then revise with the existing naturalness checks.
+  Editing-only requests keep the existing structure.
+- Japanese PR Writing now orders new PR descriptions as background, approach,
+  changes, review points, validation, and out-of-scope items, requires a
+  change-type prefix in titles, and adds guidance for plain wording, quoted UI
+  labels, conditions, and one sentence per line.
+- Japanese PR Writing drafts inline review comments, including numbered
+  `メイントピック` headings for the main changes.
+
+### Added
+
+- When Japanese PR Writing runs in Claude Code, it asks Codex
+  `gpt-6.1-terra` to draft PR titles and descriptions through the codex plugin
+  or the codex CLI, then checks the draft against the facts. It does not
+  substitute another model when Terra 6.1 is unavailable.
+
 ## [0.10.1] - 2026-10-11
 
 ### Changed
