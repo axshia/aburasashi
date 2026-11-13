@@ -1,0 +1,4 @@
+interface:
+  display_name: "Japanese Code Comment Writing"
+  short_description: "コードコメントと spec の説明文を、文脈を知らないエンジニアに伝わる日本語にする"
+  default_prompt: "$japanese-code-comment-writing で、この差分の日本語のコードコメントとテストの説明文を見直してください。実装は変更しないでください。"
