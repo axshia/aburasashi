@@ -62,10 +62,15 @@ Codex では、スキルの description が会話の開始時に読み込むよ�
   新規の検討や小さな判断、期待とのずれや方式の妥当性を、目的・比較基準・証拠・制約に分けて検討します。
   短い判断手順、異なる題材の回答例、評価ケースを備え、依頼範囲を守って結論を示します。
 - [Japanese PR Writing](plugins/aburasashi/skills/japanese-pr-writing/README.md)
-  は、PR 文書を自然でわかりやすい日本語で執筆・推敲し、技術的な意味、検証状態、既存の Markdown 構造を維持します。
+  は、PR のタイトル・本文・インラインコメント・レビュー返信を、何をしたかが 10 秒で分かる日本語で執筆・推敲し、
+  技術的な意味、検証状態、既存の Markdown 構造を維持します。
 - [Japanese Native Writing](plugins/aburasashi/skills/japanese-native-writing/README.md)
-  は、セッション中の返答とドキュメントを、結論と結果を先に置き、実施済み・未確認・未実施・不明・不足を分け、
-  選択肢を同じ観点で並べた分かりやすい日本語にします。PR 文面は Japanese PR Writing が担当します。
+  は、セッション中の返答を、結論を 1 文目に置き、要点を 2〜3 個に絞り、確かめていないことを結論と同じ重さで書いた、
+  10 秒で分かる日本語にします。
+- [Japanese Doc Writing](plugins/aburasashi/skills/japanese-doc-writing/README.md)
+  は、日本語のドキュメントを、何のページで誰が何を決めるのかが冒頭で分かるように書き、本文を 1 画面に収めて詳細を付録に移します。
+- [Japanese Code Comment Writing](plugins/aburasashi/skills/japanese-code-comment-writing/README.md)
+  は、日本語のコードコメントとテストの説明文を、文脈を知らないエンジニアに伝わるよう、背景から、識別子と技術用語の動詞で書きます。
 - [Japanese Article Writing](plugins/aburasashi/skills/japanese-article-writing/README.md)
   は、技術ブログ、ノウハウ・解説記事、比較記事、お知らせなど、社外に公開する日本語記事を、記事の型に合わせて選び最初の見出しまでに要点に届く導入、
   要点から始まる段落、条件と表記をそろえた比較表、一次情報を中心にした文章にします。一次情報が足りなければ、一般論で埋めずに質問します。

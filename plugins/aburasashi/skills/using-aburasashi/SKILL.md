@@ -32,8 +32,10 @@ Invoke first. The skill then verifies its inputs and tells you what to ask for w
 | Cue in the request or context | Invoke |
 | --- | --- |
 | Any specification or requirements formulation, UI design, UX design, or marketing thinking, even a small part of implementation or writing; also questionable results, mismatches, approach comparisons, or decision rationale | `logical-thinking` |
-| A pull request title, body, review reply, or validation report in Japanese; reviewers who read Japanese | `japanese-pr-writing` |
-| A Japanese reply, explanation, progress report, or document for the user; the first Japanese response of a session; "わかりやすく", "まとめて", "ドキュメント化", "説明して" | `japanese-native-writing` |
+| A pull request title, body, inline review comment, review reply, or validation report in Japanese; creating or editing a pull request whose reviewers read Japanese | `japanese-pr-writing` |
+| A Japanese reply, explanation, progress report, or question for the user; the first Japanese response of a session; "わかりやすく", "まとめて", "説明して" | `japanese-native-writing` |
+| A Japanese document people will read later: a design note, investigation report, migration plan, procedure, ticket, wiki or Notion page, or Markdown file; "ドキュメント化", "資料にして", "設計メモ", "調査結果をまとめて" | `japanese-doc-writing` |
+| Japanese code comments, documentation comments, NOTE or TODO comments, or Japanese test descriptions (`describe`, `context`, `it`); implementing in a repository whose comments are in Japanese | `japanese-code-comment-writing` |
 | A Japanese article for outside readers, not internal notices or documents: owned media, a company or tech blog post, a how-to, explainer, or comparison, a release announcement; "記事", "ブログ", "オウンドメディア", "リリース記事"; a Japanese article draft that reads as AI-written, padded, or generic | `japanese-article-writing` |
 | An OpenAPI file changed and a pull request is being prepared; reviewers need to see API changes | `openapi-redoc-pr-screenshots` |
 | A Draft pull request needs browser QA; multi-user or multi-state web flows; desktop and mobile evidence | `playwright-pr-qa` |
@@ -42,7 +44,7 @@ Invoke first. The skill then verifies its inputs and tells you what to ask for w
 | An iOS screen should match a design; SwiftUI, UIKit, or the iOS Simulator with a design reference | `figma-ios-simulator-parity` |
 | A website or landing-page mockup; a brand image plus a wireframe image; visual design exploration | `web-design-from-references` |
 
-A cue that might refer to one of these is enough. "The design" might be a Figma frame. "Make the PR easy to review" might mean Japanese copy or API screenshots.
+A cue that might refer to one of these is enough. "The design" might be a Figma frame. "Make the PR easy to review" might mean Japanese copy or API screenshots. "Write it up" might mean a Japanese document.
 
 ## Red Flags
 

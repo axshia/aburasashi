@@ -24,6 +24,14 @@ skills/
 │   ├── README.md
 │   ├── agents/
 │   └── references/
+├── japanese-doc-writing/
+│   ├── SKILL.md
+│   ├── README.md
+│   └── agents/
+├── japanese-code-comment-writing/
+│   ├── SKILL.md
+│   ├── README.md
+│   └── agents/
 ├── japanese-article-writing/
 │   ├── SKILL.md
 │   ├── README.md
@@ -70,12 +78,24 @@ skills/
   part of another task. It also evaluates questionable results, compares approaches,
   and explains decisions without expanding the requested scope.
 - [Japanese PR Writing](japanese-pr-writing/README.md) drafts and improves
-  Japanese pull request copy while preserving technical meaning, validation
-  status, and Markdown structure.
-- [Japanese Native Writing](japanese-native-writing/README.md) writes clear,
-  native Japanese replies and documents: conclusion first, explicit done,
-  unverified, not-done, unknown, and missing status, options with trade-offs,
-  and sparse formatting.
+  Japanese pull request titles, descriptions, inline comments, and review
+  replies so a reviewer understands what changed within ten seconds, while
+  preserving technical meaning, validation status, and Markdown structure. It
+  presents the full copy for confirmation before a pull request is created or
+  edited.
+- [Japanese Native Writing](japanese-native-writing/README.md) writes Japanese
+  replies the user understands within ten seconds: conclusion first, two or
+  three points, unverified and not-done work stated as plainly as the
+  conclusion, engineering terms left as engineers say them, and decisions asked
+  once with the recommendation first.
+- [Japanese Doc Writing](japanese-doc-writing/README.md) writes Japanese
+  documents whose first lines say what the page is for and what the reader must
+  decide: context, recommendation, and up to three decisions first, a body that
+  fits one screen, and details moved to an appendix.
+- [Japanese Code Comment Writing](japanese-code-comment-writing/README.md)
+  writes Japanese code comments and test descriptions for an engineer who lacks
+  the author's context: background before behavior, identifiers and technical
+  verbs instead of everyday wording, and no ticket numbers in place of reasons.
 - [Japanese Article Writing](japanese-article-writing/README.md) writes
   Japanese articles for outside readers, such as tech blog posts, how-to,
   explainer, and comparison articles, and release announcements: an opening

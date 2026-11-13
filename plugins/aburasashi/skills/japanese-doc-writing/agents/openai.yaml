@@ -1,0 +1,4 @@
+interface:
+  display_name: "Japanese Doc Writing"
+  short_description: "ドキュメントを、誰が何を決めるかが冒頭で分かる日本語にする"
+  default_prompt: "$japanese-doc-writing で、この内容を、誰が何を決めるためのページかが冒頭で分かる日本語のドキュメントにしてください。詳細は付録に移してください。"
