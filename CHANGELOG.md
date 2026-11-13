@@ -7,6 +7,38 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Added
+
+- Japanese Doc Writing skill for Japanese documents such as design notes,
+  investigation reports, and migration plans: the opening states what the page
+  is for, the recommendation, and up to three decisions; the body fits one
+  screen; details move to an appendix.
+- Japanese Code Comment Writing skill for Japanese code comments and test
+  descriptions: background before behavior, identifiers and technical verbs
+  instead of everyday wording, and no ticket numbers in place of reasons.
+- Japanese PR Writing adds guidance on what to include so a reviewer
+  understands the change within ten seconds, body patterns, verification
+  captures, review replies, and a rule to present the full title and body for
+  confirmation before a pull request is created or edited.
+- A maintainer procedure for tuning the Japanese writing skills from the
+  owner's edits to AI-written copy (`docs/skill-tuning.md`).
+
+### Changed
+
+- Japanese Native Writing now covers chat replies only and is rewritten around
+  a ten-second standard: conclusion first, two or three points, engineering
+  terms left as engineers say them, and decisions asked once. The five status
+  labels and parenthetical term glosses are removed. Documents move to Japanese
+  Doc Writing.
+- Japanese PR Writing follows the author's recent pull requests or the
+  repository template for section order instead of a fixed order, and uses the
+  words engineers use in conversation instead of plain rewording.
+
+### Removed
+
+- Japanese PR Writing no longer delegates drafts to Codex `gpt-6.1-terra`. The
+  model that reads the skill writes the copy itself.
+
 ## [0.11.0] - 2026-10-28
 
 ### Changed

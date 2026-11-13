@@ -63,13 +63,20 @@ model to load it at the start of every conversation. User instructions in
   questionable results and compares approaches by separating intent, evidence,
   requirements, and temporary constraints while preserving the requested scope.
 - [Japanese PR Writing](plugins/aburasashi/skills/japanese-pr-writing/README.md)
-  drafts and improves Japanese pull request copy while preserving technical
-  meaning, validation status, and existing Markdown structure.
+  drafts and improves Japanese pull request titles, descriptions, inline
+  comments, and review replies so a reviewer understands what changed within
+  ten seconds, while preserving technical meaning, validation status, and
+  existing Markdown structure.
 - [Japanese Native Writing](plugins/aburasashi/skills/japanese-native-writing/README.md)
-  writes clear, native Japanese replies and documents for the user: conclusion
-  and consequence first, explicit done, unverified, not-done, unknown, and
-  missing-input status, options with trade-offs and one decision, and sparse
-  emphasis; pull request copy stays with Japanese PR Writing.
+  writes Japanese replies the user understands within ten seconds: conclusion
+  first, two or three points, unverified work stated plainly, and decisions
+  asked once with the recommendation first.
+- [Japanese Doc Writing](plugins/aburasashi/skills/japanese-doc-writing/README.md)
+  writes Japanese documents whose first lines say what the page is for and what
+  the reader must decide, with a one-screen body and details in an appendix.
+- [Japanese Code Comment Writing](plugins/aburasashi/skills/japanese-code-comment-writing/README.md)
+  writes Japanese code comments and test descriptions for an engineer who lacks
+  the author's context, using identifiers and technical verbs.
 - [Japanese Article Writing](plugins/aburasashi/skills/japanese-article-writing/README.md)
   writes Japanese articles for outside readers (tech blogs, how-to, explainer,
   and comparison articles, release announcements) with an opening chosen by
