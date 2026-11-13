@@ -28,8 +28,8 @@ description: Use when writing, revising, or reviewing Japanese code comments, do
 ## コメントの中身
 
 - **チケット番号や計画・フェーズの名前を、理由や予定の代わりに書かない。** 何が未実装で、そのせいで何が起きるかを書く。
-  - 悪い例: `# TODO: 画面ごとの権限の確認は API-142、SSO でのログインは API-150 で入れる。`
-  - 良い例: `# TODO: 画面ごとの認可（authorization）と、SSO でのログインはまだ実装していません。` に続けて、何が起きるかを書く。
+  - 悪い例: `# TODO 画面ごとの権限の確認は API-142、SSO でのログインは API-150 で入れる。`
+  - 良い例: `# TODO 画面ごとの認可（authorization）と、SSO でのログインはまだ実装していません。` に続けて、何が起きるかを書く。
 - **背景、対応の順に書く。1 行目をコードの言い換えにしない。**
   - 悪い例: `# Cookie のトークンで見つけたセッションのうち、削除していない管理者のものだけを使う。`（`if` 文の逐語訳）
   - 良い例: `# Auth::SessionFinder#find_by_cookie は、token だけで Session を検索し、session_user を検証しません。` に続けて、なぜ困るか、ここで何をするかを書く。
