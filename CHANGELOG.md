@@ -7,6 +7,17 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Japanese Doc Writing now asks for wording a new team member can read without
+  context: meeting shorthand is spelled out, while domain terms and identifiers
+  stay as they are. Background is stated as what the feature does, the author
+  refers to themselves without their own name, unverified scope names the
+  information that was not checked instead of the reason or a guess at where
+  it is, and conclusions any reader can infer from the previous sentence are
+  left out. The final review also checks that rewording did not drop people,
+  organizations, or dates from the source.
+
 ## [0.12.0] - 2026-11-13
 
 ### Added
