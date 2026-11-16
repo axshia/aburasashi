@@ -7,6 +7,12 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Japanese Doc Writing leaves incidental work, such as writing tests, out of
+  task lists unless adding tests is the goal of the task, so the list shows
+  what each task newly adds.
+
 ## [0.13.0] - 2026-11-16
 
 ### Added
