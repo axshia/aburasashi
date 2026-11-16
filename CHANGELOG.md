@@ -7,6 +7,17 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Japanese Doc Writing puts the problem statement before the recommendation in
+  documents that ask for review, and leaves out decisions where neither option
+  has a clear advantage, so the writer decides and states the reason instead.
+  Diagrams carry only the flow, structure, and short labels, with explanations
+  in the body, and their text follows the same wording rules as the body. The
+  body no longer repeats what a diagram or another section already shows.
+  Before editing a shared document, the writer presents the copy and where it
+  goes for confirmation.
+
 ## [0.12.1] - 2026-11-16
 
 ### Changed
