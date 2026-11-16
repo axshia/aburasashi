@@ -7,6 +7,22 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Added
+
+- Excalidraw Diagrams skill for diagrams in documents, tickets, pull requests,
+  and inline comments: choose one of four patterns (scenario, problem shown as
+  a working and a failing scene, timeline, mechanism with fallback lanes),
+  label boxes with names the reader knows and the same words as the body, keep
+  colors per role, generate the scene from a Python script, render it to PNG,
+  and check it on the page after placing it.
+
+### Changed
+
+- Japanese Doc Writing and Japanese PR Writing draw flows, problems over time,
+  failure fallbacks, and before-and-after differences as diagrams with
+  Excalidraw Diagrams, and keep text flow diagrams for places that cannot
+  show images.
+
 ## [0.12.2] - 2026-11-16
 
 ### Changed

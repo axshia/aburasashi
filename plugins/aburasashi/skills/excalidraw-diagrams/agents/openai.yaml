@@ -1,0 +1,4 @@
+interface:
+  display_name: "Excalidraw Diagrams"
+  short_description: "ドキュメントや PR に載せる図を Excalidraw で描き、PNG にして載せる"
+  default_prompt: "$excalidraw-diagrams で、この設計の流れを、誰が何をするとどうなるかが追える図にしてください。"

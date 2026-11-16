@@ -37,6 +37,13 @@ skills/
 │   ├── README.md
 │   ├── agents/
 │   └── references/
+├── excalidraw-diagrams/
+│   ├── SKILL.md
+│   ├── README.md
+│   ├── agents/
+│   ├── assets/
+│   ├── references/
+│   └── scripts/
 ├── web-design-from-references/
 │   ├── SKILL.md
 │   ├── README.md
@@ -104,6 +111,9 @@ skills/
   comparison tables with consistent conditions and status labels, first-hand
   facts at the center, and rewrites of common AI-sounding patterns. When first-hand facts
   are missing, it asks for them or marks where they belong instead of padding.
+- [Excalidraw Diagrams](excalidraw-diagrams/README.md) draws diagrams for
+  documents, tickets, pull requests, and inline comments as Excalidraw scenes,
+  renders them to PNG, and checks them on the page.
 - [Web Design from References](web-design-from-references/README.md) creates
   website section mockups from a brand-concept image and a readable content
   wireframe, with no image output when either required input is missing.
