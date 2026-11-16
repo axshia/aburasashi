@@ -7,6 +7,19 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Japanese Doc Writing chooses the shape by the weight of the problem: a
+  ticket with one problem that fits a diagram uses a thin shape (opening,
+  problem with a diagram and two or three facts, what to do, a short note,
+  appendix), and recommendation and decision sections appear only when the
+  reader has something to decide. Tickets for a first-time assignee lead with
+  the conclusion and then the reason.
+- Japanese Doc Writing keeps approved text unchanged when posting it
+  elsewhere unless the difference is confirmed first, leaves what a diagram
+  already shows out of the text, and marks a temporary assumption with a point
+  in time and a one-line note that links the follow-up task.
+
 ## [0.13.1] - 2026-11-17
 
 ### Changed
