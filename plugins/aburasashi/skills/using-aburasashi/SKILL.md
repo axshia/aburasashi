@@ -37,6 +37,7 @@ Invoke first. The skill then verifies its inputs and tells you what to ask for w
 | A Japanese document people will read later: a design note, investigation report, migration plan, procedure, ticket, wiki or Notion page, or Markdown file; "ドキュメント化", "資料にして", "設計メモ", "調査結果をまとめて" | `japanese-doc-writing` |
 | Japanese code comments, documentation comments, NOTE or TODO comments, or Japanese test descriptions (`describe`, `context`, `it`); implementing in a repository whose comments are in Japanese | `japanese-code-comment-writing` |
 | A Japanese article for outside readers, not internal notices or documents: owned media, a company or tech blog post, a how-to, explainer, or comparison, a release announcement; "記事", "ブログ", "オウンドメディア", "リリース記事"; a Japanese article draft that reads as AI-written, padded, or generic | `japanese-article-writing` |
+| A document, ticket, pull request, or inline comment that would be clearer with a diagram: a flow across people, screens, or systems, a problem over time, a failure fallback, a before-and-after difference; "図解", "図にして", "フロー図", "構成図" | `excalidraw-diagrams` |
 | An OpenAPI file changed and a pull request is being prepared; reviewers need to see API changes | `openapi-redoc-pr-screenshots` |
 | A Draft pull request needs browser QA; multi-user or multi-state web flows; desktop and mobile evidence | `playwright-pr-qa` |
 | Record an E2E browser journey, make an instant Playwright script, or supply recorded test evidence to a PR workflow | `playwright-e2e-recording` |

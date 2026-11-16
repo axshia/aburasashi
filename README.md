@@ -84,6 +84,11 @@ model to load it at the start of every conversation. User instructions in
   open with their point, comparison tables with consistent conditions and status
   labels, and first-hand facts at the center; it asks for missing first-hand
   facts instead of padding with generic content.
+- [Excalidraw Diagrams](plugins/aburasashi/skills/excalidraw-diagrams/README.md)
+  draws diagrams for documents, tickets, pull requests, and inline comments as
+  Excalidraw scenes from a generator script, renders them to PNG, and checks
+  them on the page: scenarios, problems shown as a working and a failing scene,
+  timelines, and mechanisms with separate fallback lanes.
 - [Web Design from References](plugins/aburasashi/skills/web-design-from-references/README.md)
   creates website section mockups from both a brand-concept image and a readable
   content-wireframe image, with shared art direction and targeted corrections;
