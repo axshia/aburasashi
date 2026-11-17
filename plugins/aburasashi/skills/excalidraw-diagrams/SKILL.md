@@ -1,6 +1,6 @@
 ---
 name: excalidraw-diagrams
-description: Use when a document, ticket, pull request description, inline review comment, or review reply would be clearer with a diagram, such as a flow across people, screens, or systems, a problem that appears over time, a normal path with a failure fallback, or a before-and-after difference, and when an existing diagram must be revised. Draws the diagram as an Excalidraw scene from a generator script, renders it to PNG, checks it, and places it. Triggers include 図解して, 図にして, 図を入れて, フロー図, 構成図, and diagram. Do not use for chat replies in a terminal, comparisons a table can carry, or screenshots of real screens; use focused-screen-captures for real screens.
+description: Use when a document, ticket, pull request description, inline review comment, or review reply would be clearer with a diagram, such as a flow across people, screens, or systems, a problem that appears over time, a normal path with a failure fallback, or a before-and-after difference, and when an existing diagram must be revised. Also use when a chat reply reports how something currently works across several tables, screens, or systems, to offer diagrams on a local HTML page opened in the browser. Draws the diagram as an Excalidraw scene from a generator script, renders it to PNG, checks it, and places it. Triggers include 図解して, 図にして, 図を入れて, フロー図, 構成図, and diagram. Do not draw inside chat replies in a terminal, and do not use for comparisons a table can carry, or screenshots of real screens; use focused-screen-captures for real screens.
 ---
 
 # Excalidraw Diagrams
@@ -13,6 +13,8 @@ description: Use when a document, ticket, pull request description, inline revie
 
 - 対象は、あとから人が見る図（設計書、調査結果、チケット、PR 本文、インラインコメント、レビュー返信）。
 - ターミナルへの返答では画像を表示できないので、`japanese-native-writing` のテキストのフロー図を使う。
+- 現状調査（コード、スキーマ、チケットを読んで今の作りを説明する）で、複数のテーブル・画面・システムにまたがる構造や流れを返答で報告したときは、返答の末尾で「Excalidraw の図にして、ブラウザで開けるページで図解しますか？」と 1 回だけ提案する。頼まれる前に描き始めず、ユーザーが図を頼むまで文章の説明を重ねない。
+  承諾されたら、見出しごとに 1 枚の図を置いたローカルの HTML ページ（Notion のページに似せた体裁など）を作り、ローカルの HTTP サーバーで配信してブラウザで開く。ページの文章は `japanese-doc-writing` に従う。
 - 同じ観点の短い値の比較は表、実際の画面はスクリーンショットにする。図にしない。実際の画面の箇所を示すときは `focused-screen-captures` を使う。
 
 ## 図にするかを決める

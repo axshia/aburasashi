@@ -43,8 +43,8 @@ description: Use when writing, revising, or reviewing Japanese code comments, do
 ## 言葉
 
 - **読み手はエンジニア。和語に言い換えず、識別子と専門用語（英語・カタカナ語）で書く。**
-  - 悪い例: 持ち主 / 署名付きの Cookie / 権限の確認 / 役割 / 戻り先 / 継がない / ほかの補助
-  - 良い例: `session_user` / signed cookie / 認可（authorization） / role / callback / 継承しない / `sign_in_as_admin`
+  - 悪い例: 持ち主 / 署名付きの Cookie / 権限の確認 / 役割 / 戻り先 / 継がない / ほかの補助 / 列を足す
+  - 良い例: `session_user` / signed cookie / 認可（authorization） / role / callback / 継承しない / `sign_in_as_admin` / カラムを追加する（「足す」は数や量に使う語）
 - **あいまいな言葉は、短く正確な言葉に直す。説明を足して長くしない。**
   - 悪い例: `# 次のリクエストから送るようにする。`（アプリの次の応答の話にも読める）
   - 悪い例（直そうとして長くした案）: `# このあとテストで送るリクエストに、署名付きの Cookie を付ける。`

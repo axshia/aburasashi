@@ -7,6 +7,25 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Using Aburasashi routes HTML pages and mocks that explain something with
+  diagrams to Japanese Doc Writing, with the cues "図で見せて" and
+  "ブラウザで見せて". Two new red flags stop treating such a page as "not a
+  document", and stop replacing identifiers and team terms with metaphors or
+  plain words when the user says the text is hard to understand.
+- Excalidraw Diagrams and Japanese Native Writing end a reply that reports how
+  something currently works across several tables, screens, or systems with
+  one offer, such as "Excalidraw の図にして、ブラウザで開けるページで図解しますか？".
+  On a yes, the diagrams go one per heading on a local HTML page served and
+  opened in the browser, instead of being drawn unasked or left for the user
+  to request.
+- Japanese Native Writing, Japanese Doc Writing, Japanese PR Writing, and
+  Japanese Code Comment Writing add "「列を足す」ではなく「カラムを追加する」"
+  to the established katakana term examples, with a note that 足す is for
+  numbers and quantities, so a column, field, or element being added is
+  追加する.
+
 ## [0.14.0] - 2026-11-17
 
 ### Added
