@@ -1,0 +1,4 @@
+interface:
+  display_name: "Japanese Doc Review"
+  short_description: "書き上げたドキュメントを、初見の読み手の目で客観的にレビューする"
+  default_prompt: "$japanese-doc-review で、このドキュメントを共有する前に、初見の読み手が目的と作業を理解できるか、画像だけで何を示すか分かるかをレビューしてください。まだ書き換えないでください。"

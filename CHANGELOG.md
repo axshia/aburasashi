@@ -7,6 +7,37 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Added
+
+- Japanese Doc Review reviews a finished Japanese document through a reader
+  without the session's context. The reader first says what each image shows
+  on its own, then what the page is for, and where words, references, or
+  repeated content tripped them. Findings come back as a table of location,
+  what happens to the reader, and replacement text, covering headings,
+  wording, sentence links, image placement, and references.
+- Focused Screen Captures captures a real screen under a fixed viewport, hides
+  developer overlays, dims everything except the target, outlines it with
+  `scripts/focus-overlay.js`, and places the image after a one-sentence lead
+  wherever text points to a place on a screen.
+
+### Changed
+
+- Japanese Doc Writing names headings by their content, carries the opening
+  fact through to why the page is needed, shows contents instead of bare
+  counts, links cause-and-effect sentences and splits sentences with three or
+  more clauses, turns parallel scenes into lists, leads every image with one
+  sentence, and puts a focused screen capture before text that points to a
+  place on a screen. Tickets are sized so one outcome can be judged done, work
+  shared with sibling tickets appears in both, and open questions say who
+  decides and how the work proceeds until then. Shared documents finish with
+  Japanese Doc Review.
+- Excalidraw Diagrams labels with the team's names and the reader's outcome,
+  checks whether elements are parallel or sequential before drawing arrows,
+  shows states as short-tailed callouts, and keeps labels in the same position
+  the same shape across before-and-after diagrams.
+- Japanese Native Writing includes how the work proceeds after each choice
+  when it asks the user to decide.
+
 ## [0.13.2] - 2026-11-17
 
 ### Changed

@@ -28,6 +28,10 @@ skills/
 │   ├── SKILL.md
 │   ├── README.md
 │   └── agents/
+├── japanese-doc-review/
+│   ├── SKILL.md
+│   ├── README.md
+│   └── agents/
 ├── japanese-code-comment-writing/
 │   ├── SKILL.md
 │   ├── README.md
@@ -43,6 +47,11 @@ skills/
 │   ├── agents/
 │   ├── assets/
 │   ├── references/
+│   └── scripts/
+├── focused-screen-captures/
+│   ├── SKILL.md
+│   ├── README.md
+│   ├── agents/
 │   └── scripts/
 ├── web-design-from-references/
 │   ├── SKILL.md
@@ -99,6 +108,12 @@ skills/
   documents whose first lines say what the page is for and what the reader must
   decide: context, recommendation, and up to three decisions first, a body that
   fits one screen, and details moved to an appendix.
+- [Japanese Doc Review](japanese-doc-review/README.md) reviews a finished
+  Japanese document through a reader without the session's context: whether
+  each image is understood on its own, whether the purpose and the work are
+  clear from the opening, and where headings, wording, sentence links, image
+  placement, or references trip a first-time reader. It returns located
+  findings with replacement text and does not rewrite unless asked.
 - [Japanese Code Comment Writing](japanese-code-comment-writing/README.md)
   writes Japanese code comments and test descriptions for an engineer who lacks
   the author's context: background before behavior, identifiers and technical
@@ -114,6 +129,10 @@ skills/
 - [Excalidraw Diagrams](excalidraw-diagrams/README.md) draws diagrams for
   documents, tickets, pull requests, and inline comments as Excalidraw scenes,
   renders them to PNG, and checks them on the page.
+- [Focused Screen Captures](focused-screen-captures/README.md) captures a real
+  screen under fixed viewport conditions, dims everything except the target,
+  outlines it, and places the image after a one-sentence lead wherever text
+  points to a place on a screen.
 - [Web Design from References](web-design-from-references/README.md) creates
   website section mockups from a brand-concept image and a readable content
   wireframe, with no image output when either required input is missing.

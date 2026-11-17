@@ -69,6 +69,10 @@ Codex では、スキルの description が会話の開始時に読み込むよ�
   10 秒で分かる日本語にします。
 - [Japanese Doc Writing](plugins/aburasashi/skills/japanese-doc-writing/README.md)
   は、日本語のドキュメントを、何のページで誰が何を決めるのかが冒頭で分かるように書き、本文を 1 画面に収めて詳細を付録に移します。
+- [Japanese Doc Review](plugins/aburasashi/skills/japanese-doc-review/README.md)
+  は、書き上げた日本語のドキュメントを、文脈を持たない読み手に読んでもらい、目的・見出し・言葉・文のつながり・画像の置き方・参照の観点で、場所と直し方の案を添えた指摘を返します。
+- [Focused Screen Captures](plugins/aburasashi/skills/focused-screen-captures/README.md)
+  は、文が画面の特定の箇所を指すときに、実際の画面を撮り、対象以外を暗くして赤枠で囲み、何を示すかの 1 文のあとに載せます。
 - [Japanese Code Comment Writing](plugins/aburasashi/skills/japanese-code-comment-writing/README.md)
   は、日本語のコードコメントとテストの説明文を、文脈を知らないエンジニアに伝わるよう、背景から、識別子と技術用語の動詞で書きます。
 - [Japanese Article Writing](plugins/aburasashi/skills/japanese-article-writing/README.md)
