@@ -34,7 +34,7 @@ Invoke first. The skill then verifies its inputs and tells you what to ask for w
 | Any specification or requirements formulation, UI design, UX design, or marketing thinking, even a small part of implementation or writing; also questionable results, mismatches, approach comparisons, or decision rationale | `logical-thinking` |
 | A pull request title, body, inline review comment, review reply, or validation report in Japanese; creating or editing a pull request whose reviewers read Japanese | `japanese-pr-writing` |
 | A Japanese reply, explanation, progress report, or question for the user; the first Japanese response of a session; "わかりやすく", "まとめて", "説明して" | `japanese-native-writing` |
-| A Japanese document people will read later: a design note, investigation report, migration plan, procedure, ticket, wiki or Notion page, or Markdown file; "ドキュメント化", "資料にして", "設計メモ", "調査結果をまとめて" | `japanese-doc-writing` |
+| A Japanese document people will read later: a design note, investigation report, migration plan, procedure, ticket, wiki or Notion page, Markdown file, or an HTML page or mock that explains something with diagrams; "ドキュメント化", "資料にして", "設計メモ", "調査結果をまとめて", "図で見せて", "ブラウザで見せて" | `japanese-doc-writing` |
 | A Japanese document or ticket was just written or revised and will be shared; a request to check whether a first-time reader understands it or whether its images work; "レビューして", "初見で分かるか", "共有する前に確認" | `japanese-doc-review` |
 | Japanese code comments, documentation comments, NOTE or TODO comments, or Japanese test descriptions (`describe`, `context`, `it`); implementing in a repository whose comments are in Japanese | `japanese-code-comment-writing` |
 | A Japanese article for outside readers, not internal notices or documents: owned media, a company or tech blog post, a how-to, explainer, or comparison, a release announcement; "記事", "ブログ", "オウンドメディア", "リリース記事"; a Japanese article draft that reads as AI-written, padded, or generic | `japanese-article-writing` |
@@ -62,6 +62,8 @@ These thoughts mean STOP. You are rationalizing.
 | "I can write the PR body myself" | That is what the skill is for. Invoke. |
 | "The user did not name the skill" | Skills trigger on the task, not on their name. |
 | "I remember what that skill says" | Skills change. Read the current version. |
+| "It is only an HTML page or a page of diagrams, not a document" | A page the user reads later is a document. Invoke `japanese-doc-writing` before writing its text. |
+| "The user said it is hard to understand, so I'll swap the terms for metaphors or plain words" | Metaphors such as 箱 for a table or 元の番号 for a column add a translation step. Keep identifiers and team terms, cut what the page shows, and invoke the writing skill for that output. |
 
 ## User Instructions
 

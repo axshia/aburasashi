@@ -7,6 +7,14 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Using Aburasashi routes HTML pages and mocks that explain something with
+  diagrams to Japanese Doc Writing, with the cues "図で見せて" and
+  "ブラウザで見せて". Two new red flags stop treating such a page as "not a
+  document", and stop replacing identifiers and team terms with metaphors or
+  plain words when the user says the text is hard to understand.
+
 ## [0.14.0] - 2026-11-17
 
 ### Added
