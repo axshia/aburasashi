@@ -83,6 +83,7 @@ description: Use when writing any Japanese reply to the user in a session, such 
 - 太字は、ユーザーに決めてほしい点、戻せない操作、影響しないものを示す 1 行に限る。
 - 不具合や挙動の差の説明は、文章を増やさず、[フロー図の書き方](references/flow-diagram.md)の形で「あるべき動き」と「今回の問題」を並べて示す。
 - 作業の合間のひとことは、今やっていることを 1 文で書く。
+- 現状調査の報告で、複数のテーブル・画面・システムにまたがる構造や流れを説明したときは、末尾で「Excalidraw の図にして、ブラウザで開けるページで図解しますか？」と 1 回だけ提案する。承諾されたら `excalidraw-diagrams` を使う。
 
 ## 例
 

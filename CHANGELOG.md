@@ -14,6 +14,12 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
   "ブラウザで見せて". Two new red flags stop treating such a page as "not a
   document", and stop replacing identifiers and team terms with metaphors or
   plain words when the user says the text is hard to understand.
+- Excalidraw Diagrams and Japanese Native Writing end a reply that reports how
+  something currently works across several tables, screens, or systems with
+  one offer, such as "Excalidraw の図にして、ブラウザで開けるページで図解しますか？".
+  On a yes, the diagrams go one per heading on a local HTML page served and
+  opened in the browser, instead of being drawn unasked or left for the user
+  to request.
 
 ## [0.14.0] - 2026-11-17
 
