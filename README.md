@@ -74,6 +74,10 @@ model to load it at the start of every conversation. User instructions in
 - [Japanese Doc Writing](plugins/aburasashi/skills/japanese-doc-writing/README.md)
   writes Japanese documents whose first lines say what the page is for and what
   the reader must decide, with a one-screen body and details in an appendix.
+- [Japanese Doc Review](plugins/aburasashi/skills/japanese-doc-review/README.md)
+  reviews a finished Japanese document through a reader without the session's
+  context and returns located findings on purpose, headings, wording, sentence
+  links, image placement, and references.
 - [Japanese Code Comment Writing](plugins/aburasashi/skills/japanese-code-comment-writing/README.md)
   writes Japanese code comments and test descriptions for an engineer who lacks
   the author's context, using identifiers and technical verbs.
@@ -89,6 +93,10 @@ model to load it at the start of every conversation. User instructions in
   Excalidraw scenes from a generator script, renders them to PNG, and checks
   them on the page: scenarios, problems shown as a working and a failing scene,
   timelines, and mechanisms with separate fallback lanes.
+- [Focused Screen Captures](plugins/aburasashi/skills/focused-screen-captures/README.md)
+  captures a real screen, dims everything except the target, outlines it, and
+  places the image after a one-sentence lead where text points to a place on a
+  screen.
 - [Web Design from References](plugins/aburasashi/skills/web-design-from-references/README.md)
   creates website section mockups from both a brand-concept image and a readable
   content-wireframe image, with shared art direction and targeted corrections;

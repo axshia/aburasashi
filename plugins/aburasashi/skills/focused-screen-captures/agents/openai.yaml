@@ -1,0 +1,4 @@
+interface:
+  display_name: "Focused Screen Captures"
+  short_description: "画面の箇所を指す文に、対象以外を暗くして赤枠で囲んだキャプチャを添える"
+  default_prompt: "$focused-screen-captures で、このドキュメントの画面の箇所を指す文の前に、対象以外を暗くして赤枠で囲んだキャプチャを入れてください。"
