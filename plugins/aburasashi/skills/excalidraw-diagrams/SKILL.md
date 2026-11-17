@@ -1,6 +1,6 @@
 ---
 name: excalidraw-diagrams
-description: Use when a document, ticket, pull request description, inline review comment, or review reply would be clearer with a diagram, such as a flow across people, screens, or systems, a problem that appears over time, a normal path with a failure fallback, or a before-and-after difference, and when an existing diagram must be revised. Draws the diagram as an Excalidraw scene from a generator script, renders it to PNG, checks it, and places it. Triggers include 図解して, 図にして, 図を入れて, フロー図, 構成図, and diagram. Do not use for chat replies in a terminal, comparisons a table can carry, or screenshots of real screens.
+description: Use when a document, ticket, pull request description, inline review comment, or review reply would be clearer with a diagram, such as a flow across people, screens, or systems, a problem that appears over time, a normal path with a failure fallback, or a before-and-after difference, and when an existing diagram must be revised. Draws the diagram as an Excalidraw scene from a generator script, renders it to PNG, checks it, and places it. Triggers include 図解して, 図にして, 図を入れて, フロー図, 構成図, and diagram. Do not use for chat replies in a terminal, comparisons a table can carry, or screenshots of real screens; use focused-screen-captures for real screens.
 ---
 
 # Excalidraw Diagrams
@@ -13,7 +13,7 @@ description: Use when a document, ticket, pull request description, inline revie
 
 - 対象は、あとから人が見る図（設計書、調査結果、チケット、PR 本文、インラインコメント、レビュー返信）。
 - ターミナルへの返答では画像を表示できないので、`japanese-native-writing` のテキストのフロー図を使う。
-- 同じ観点の短い値の比較は表、実際の画面はスクリーンショットにする。図にしない。
+- 同じ観点の短い値の比較は表、実際の画面はスクリーンショットにする。図にしない。実際の画面の箇所を示すときは `focused-screen-captures` を使う。
 
 ## 図にするかを決める
 
@@ -35,6 +35,10 @@ description: Use when a document, ticket, pull request description, inline revie
 
 - 箱のラベルは、読み手が知っている出来事や操作の名前で書く（「Web の処理」ではなく「キャンセル / 返品」）。
   実装の名前が要るときは、役割の名前のあとに括弧で添える（「再送バッチ（cron の rake タスク）」）。
+- ラベルは、現場で使う呼び名と、読み手に起きる結果で書く（「仮の 30 件」ではなく「モックデータ」、「絞り込まない」ではなく「絞り込みできない」）。件数や項目数は、図の主題でなければ書かない。
+- 矢印は、要素どうしの関係の形を確かめてから引く。並列の関係（1 つの画面が 2 つの先を参照する）を、1 本の直列の矢印でつながない。関係の形が指示から読み取れないときは、描く前に確かめる。
+- 状態や結果は、流れの次の箱にせず、対象に添える吹き出しで描く。吹き出しのしっぽは短くする。
+- 前後を比べる図は、同じ位置のラベルを同じ形にそろえる（上下とも「表示対象: 〜」）。形がずれると、読み手は差がどこにあるかを探す。
 - 図の言葉を本文とそろえる。同じものを、図と本文で別の言葉で呼ばない（図は「棄却」、本文は「却下」にしない）。
 - 図には、流れ・構造と短いラベルだけを描く。方針の文、利点・欠点、注記、図のタイトルは本文に書く。
 - 色は役割ごとに決め、同じドキュメントのすべての図でそろえる（人、もう一人の担当、処理、キュー、保存先、問題、スケジューラ、補足）。値は `scripts/excalidraw_scene.py` の `COLORS` にある。
@@ -67,7 +71,7 @@ description: Use when a document, ticket, pull request description, inline revie
 
 1. 図だけで、誰が・何をすると・どうなるかを追えるか。
 2. 1 枚の図で伝えることは 1 つか。本文の見出しと図が 1 対 1 か。
-3. ラベルは、読み手が知っている名前で、本文と同じ言葉か。
+3. ラベルは、読み手が知っている名前で、本文と同じ言葉か。前後の図で、同じ位置のラベルの形がそろっているか。
 4. 方針・注記・タイトルが図に入っていないか。
 5. 載せたページで、文字が読めるか。
 
