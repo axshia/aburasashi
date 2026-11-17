@@ -7,6 +7,8 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+## [0.14.1] - 2026-11-18
+
 ### Changed
 
 - Using Aburasashi routes HTML pages and mocks that explain something with
@@ -335,7 +337,8 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 - Dependency-free validation, release checks, and GitHub Actions CI.
 - Contribution and publishing documentation.
 
-[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.14.0...HEAD
+[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.14.1...HEAD
+[0.14.1]: https://github.com/axshia/aburasashi/compare/v0.14.0...v0.14.1
 [0.14.0]: https://github.com/axshia/aburasashi/compare/v0.13.2...v0.14.0
 [0.13.2]: https://github.com/axshia/aburasashi/compare/v0.13.1...v0.13.2
 [0.13.1]: https://github.com/axshia/aburasashi/compare/v0.13.0...v0.13.1
