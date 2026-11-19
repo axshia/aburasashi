@@ -13,6 +13,14 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
   keeps the story's form (what the user can do), and a ticket outside a story
   is named as work to do ("〜を追加する"), with a before-and-after example in
   `references/tickets.md`.
+- Japanese Doc Writing adds optional ticket sections to
+  `references/tickets.md`: ゴール written as "〜のとき、〜になる", PR と依存 with
+  an estimate and its basis per pull request, and 実装の参考になる資料 that
+  points to where to look without proposing code, file lists, or names. It
+  also adds how to split a story into tickets and agree on the split before
+  writing them.
+- Japanese Doc Writing and Using Aburasashi add the cues "タスク化して",
+  "サブタスクの本文を書いて", and "チケットを具体化して".
 
 ## [0.14.2] - 2026-11-19
 

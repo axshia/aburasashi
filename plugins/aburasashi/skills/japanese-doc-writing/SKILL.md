@@ -1,6 +1,6 @@
 ---
 name: japanese-doc-writing
-description: Use when writing, revising, or reviewing a Japanese document that people will read later, such as a design note, investigation report, migration plan, comparison or consultation document, data model explanation, procedure, wiki or Notion page, ticket, or Markdown file, and before turning investigation results or session findings into a document. Triggers include ドキュメント化して, 資料にして, 設計メモを書いて, 調査結果をまとめて, Notion にまとめて, and この資料どう思う. Do not use for chat replies, pull request copy, code comments, or articles for outside readers; use japanese-native-writing, japanese-pr-writing, japanese-code-comment-writing, or japanese-article-writing for those.
+description: Use when writing, revising, or reviewing a Japanese document that people will read later, such as a design note, investigation report, migration plan, comparison or consultation document, data model explanation, procedure, wiki or Notion page, ticket, or Markdown file, and before turning investigation results or session findings into a document. Triggers include ドキュメント化して, 資料にして, 設計メモを書いて, 調査結果をまとめて, Notion にまとめて, チケットを書いて, タスク化して, サブタスクの本文を書いて, and この資料どう思う. Do not use for chat replies, pull request copy, code comments, or articles for outside readers; use japanese-native-writing, japanese-pr-writing, japanese-code-comment-writing, or japanese-article-writing for those.
 ---
 
 # Japanese Doc Writing
@@ -54,6 +54,8 @@ AI がドキュメントを書くと、調べたことと考えたことをす�
 - 確認すること、または確認した内容（確認先を見出しに書く）
 - やること、やらないこと、依存するチケット
 - 付録
+
+完了の条件（ゴール）、PR ごとの見積もりと依存、ストーリーをチケットに分けるときの決まりは、[チケットの型](references/tickets.md) の「必要なときに追加する節」「ストーリーをチケットに分けるとき」にある。
 
 作業を担当する人が初めて読むチケットでは、概要の 1 文目に結論（何をどう扱うか）を書く。条件の箇条書きから始めない。
 初見の読み手が、何をすればよいかを一度でつかめるようにするため。
