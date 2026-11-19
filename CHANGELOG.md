@@ -7,6 +7,37 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Japanese Doc Writing changes the thin ticket form to "概要 → このチケットで
+  解決したい課題 → 中身が分かる見出しの節 → 確認すること → やること・やらない
+  こと・依存するチケット → 付録". The 概要 starts with what the ticket does, not
+  with "このチケットで、", and the current behavior and the diagram move into
+  the 課題 section. A new reference, `references/tickets.md`, holds the form,
+  what to check before writing, and before-and-after examples.
+- Japanese Doc Writing adds a form for a document that asks for agreement on a
+  plan ("今の動き → 解決したい問題 → やりたいこと → 決めてほしいこと → まだ確か
+  めていないこと → 付録") in `references/consultations.md`, with the images to
+  pair: a flow diagram and a real screen capture for the current behavior, and
+  the same diagram shape and a composite of the same screen for the proposal.
+- Japanese Doc Writing links other tickets with "ID and title" instead of the
+  ID alone, names the table of a column on first mention, separates what a
+  person answered from what the writer verified, rewrites "確認すること" into
+  "確認した内容について" once the answer arrives, and asks to check the basis
+  of a ticket's premise before writing. "決まらないと何が進められないか" is no
+  longer required on every decision item, and how the document was made or
+  which examples it followed is no longer written in the document.
+- Focused Screen Captures adds "提案のイメージを作る": add the proposed element
+  to the DOM of the same real screen by cloning a similar existing part,
+  capture it with the same viewport and frame as the current screen, remove
+  the element, and state that the image is a composite with an undecided
+  design.
+- Excalidraw Diagrams leaves out the person icon when every row has the same
+  actor, and labels a step outside the current work with whether it is already
+  implemented or which work covers it.
+- Using Aburasashi adds the cues "チケットを書いて", "合意を取る資料", "相談資料",
+  and "提案のイメージ".
+
 ## [0.14.1] - 2026-11-18
 
 ### Changed
