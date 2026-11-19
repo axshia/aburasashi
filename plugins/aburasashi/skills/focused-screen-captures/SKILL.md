@@ -1,6 +1,6 @@
 ---
 name: focused-screen-captures
-description: Use when a document, ticket, pull request description, or review comment refers to a specific place on a real screen, such as a banner, a field, a column, a side panel item, or a button, and the reader would need to find that place. Captures the real screen with fixed viewport conditions, dims everything except the target with a backdrop, outlines the target, places the image after a one-sentence lead, and checks it on the page. Triggers include キャプチャを載せて, スクショを貼って, 画面のどこか分かるように, バックドロップ, フォーカス, 赤枠, and screenshot. Do not use for diagrams of flows or structures (use excalidraw-diagrams), design-to-implementation comparison (use figma-web-parity), or OpenAPI documentation captures (use openapi-redoc-pr-screenshots).
+description: Use when a document, ticket, pull request description, or review comment refers to a specific place on a real screen, such as a banner, a field, a column, a side panel item, or a button, and the reader would need to find that place. Captures the real screen with fixed viewport conditions, dims everything except the target with a backdrop, outlines the target, places the image after a one-sentence lead, and checks it on the page. Also builds a proposal image by adding the proposed element to the same real screen and capturing it with the same frame, for documents that ask for agreement on a screen change. Triggers include キャプチャを載せて, 提案のイメージ, 変更後の画面のイメージ, スクショを貼って, 画面のどこか分かるように, バックドロップ, フォーカス, 赤枠, and screenshot. Do not use for diagrams of flows or structures (use excalidraw-diagrams), design-to-implementation comparison (use figma-web-parity), or OpenAPI documentation captures (use openapi-redoc-pr-screenshots).
 ---
 
 # Focused Screen Captures
@@ -21,7 +21,7 @@ description: Use when a document, ticket, pull request description, or review co
 - 画面の箇所を指す文ごとに、1 枚を撮る。1 枚で示す対象は、1 つの話題に関わる箇所だけにする（離れた 2 か所でも、同じ話題なら 1 枚に入れてよい）。
 - 対象は、文が指す範囲にそろえる。節全体を指す文なら節の枠、項目を指す文なら項目の行を囲む。
   囲む範囲が広すぎると、どこを読めばよいかが伝わらないため。
-- 今の画面にまだ存在しないもの（これから追加する欄）は、撮らない。追加する場所を文で書く。
+- 今の画面にまだ存在しないもの（これから追加する欄）は、今の画面としては撮らない。追加する場所を文で書くか、「提案のイメージを作る」に従って、合成のイメージとして載せる。
 - 写るアカウントとデータは、開発用のダミーか、載せる先で公開してよいものに限る。
 
 ## 撮り方
@@ -37,6 +37,19 @@ description: Use when a document, ticket, pull request description, or review co
    対象以外を半透明の黒（既定は `rgba(0,0,0,0.55)`）で暗くし、対象を赤の 3px の角丸の枠で囲む。対象は CSS セレクタか、セレクタと表示テキストの組で指定する。
 6. viewport の範囲を撮る。続けて別の対象を撮るときは、`apply` を呼び直す（前のオーバーレイは置き換わる）。
 7. 撮り終えたら、`window.__focusCapture.clear()` でオーバーレイを外し、viewport のエミュレーションを解除する。
+
+## 提案のイメージを作る
+
+画面の変更を提案する資料では、今の画面のキャプチャと、同じ画面に変更を加えた合成のイメージを並べる。
+読み手が、2 枚を見比べるだけで、何が変わるかを分かるようにするため。
+
+1. 今の画面を、「撮り方」の手順で撮る。
+2. 同じページ、同じ viewport のまま、ページの DOM に変更を加える。追加する要素は、画面にある似た部品（既存のラベルやボタン）を複製して、文言と色だけを変える。合成が、実際の部品の見た目から離れないようにするため。
+3. 追加した要素に目印の属性（`data-mock` など）を付け、1 と同じ対象を枠で囲んで撮る。
+4. 撮り終えたら、追加した要素を消す。サーバーのデータや、リポジトリのコードは変えない。
+5. 載せるときは、直前の文に、実際の画面に変更を加えた合成であることと、デザインがまだ決まっていないことを書く（「一覧の表示のイメージは、次の画像の赤枠のとおりです（実際の画面にタグを追加した合成で、デザインは未確定です）。」）。
+
+`scripts/focus-overlay.js` を、ツールが読めない場所（プラグインのキャッシュなど）からは評価できないことがある。そのときは、作業用のディレクトリにコピーしてから評価する。
 
 ## 確かめる
 
@@ -62,4 +75,5 @@ description: Use when a document, ticket, pull request description, or review co
 2. 画像だけを見て、どこの話かが分かるか（枠の範囲は文の範囲と合っているか）。
 3. 画像の直前に、何を示すかの 1 文があるか。画像と文で、同じことを書いていないか。
 4. 写っているデータは、載せる先で公開してよいものか。
-5. 載せたページで、画像が表示され、文字が読めるか。
+5. 合成のイメージに、合成であることと、デザインが未確定であることを書いたか。追加した要素を、ページから消したか。
+6. 載せたページで、画像が表示され、文字が読めるか。
