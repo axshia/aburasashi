@@ -7,6 +7,13 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Japanese Doc Writing names a ticket by its kind: a ticket under a story
+  keeps the story's form (what the user can do), and a ticket outside a story
+  is named as work to do ("〜を追加する"), with a before-and-after example in
+  `references/tickets.md`.
+
 ## [0.14.2] - 2026-11-19
 
 ### Changed
