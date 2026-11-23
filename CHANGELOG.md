@@ -7,6 +7,8 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+## [0.14.4] - 2026-11-23
+
 ### Changed
 
 - Japanese PR Writing explains when readers need product-specific context to
@@ -394,7 +396,8 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 - Dependency-free validation, release checks, and GitHub Actions CI.
 - Contribution and publishing documentation.
 
-[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.14.3...HEAD
+[Unreleased]: https://github.com/axshia/aburasashi/compare/v0.14.4...HEAD
+[0.14.4]: https://github.com/axshia/aburasashi/compare/v0.14.3...v0.14.4
 [0.14.3]: https://github.com/axshia/aburasashi/compare/v0.14.2...v0.14.3
 [0.14.2]: https://github.com/axshia/aburasashi/compare/v0.14.1...v0.14.2
 [0.14.1]: https://github.com/axshia/aburasashi/compare/v0.14.0...v0.14.1
