@@ -7,6 +7,13 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Japanese PR Writing explains when readers need product-specific context to
+  understand a change, why related actions behave differently, and what the
+  change means for operators. A worked invoice example shows how to keep the
+  PR template and add a subsection for that context.
+
 ## [0.14.3] - 2026-11-19
 
 ### Changed
