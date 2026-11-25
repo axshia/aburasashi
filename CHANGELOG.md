@@ -7,6 +7,15 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Japanese PR Writing makes inline comments part of the PR creation workflow.
+  The writing steps now sort each point into the body or an inline comment
+  before drafting, the text shown for approval has three slots (title, body,
+  inline comments), and approved comments are posted right after the PR is
+  created. Template sections such as 補足 or 設計判断 keep only points that are
+  not tied to a line.
+
 ## [0.14.4] - 2026-11-23
 
 ### Changed
