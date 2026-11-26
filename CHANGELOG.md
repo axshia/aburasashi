@@ -7,6 +7,22 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ## [Unreleased]
 
+### Changed
+
+- Japanese PR Writing asks for a short title that says what the change
+  achieved, instead of reusing the first sentence of the description, and
+  moves screen locations, state conditions, and button names to the body.
+- Japanese PR Writing no longer restates what reviewers already see in the
+  diff or screenshots. The description states what was done and any pending
+  decision; details go to inline comments. Inline comments link to the
+  reference they rely on first, then give only the reason the code cannot
+  show. Things users see on screen are named as users see them, not by the
+  implementation term.
+- Japanese Code Comment Writing keeps comments on shared code such as models
+  free of a specific screen's purpose, allows business rules, and matches the
+  amount of comment to the size of the implementation, listing cases as
+  results instead of stacking NOTE paragraphs.
+
 ## [0.14.5] - 2026-11-25
 
 ### Changed
